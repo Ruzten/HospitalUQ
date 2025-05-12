@@ -4,17 +4,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Carga el archivo FXML
         Parent root = FXMLLoader.load(getClass().getResource("InicioApp.fxml"));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Images/HospitalUQLOGO.png")));
 
-        // Crea y muestra la escena
+
+
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("HospitalUQ");
+
         primaryStage.show();
     }
 
