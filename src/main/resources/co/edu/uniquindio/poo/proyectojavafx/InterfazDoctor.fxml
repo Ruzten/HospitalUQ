@@ -6,57 +6,93 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="787.0" fitWidth="1411.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Images/InterfazPaciente.png" />
+            <Image url="@../../../../../Images/FondoInterfazDr.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="428.0" layoutY="68.0" prefHeight="47.0" prefWidth="543.0" text="¡Bienvenido, (nombre) (apellido)!" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="62.0" prefHeight="47.0" prefWidth="543.0" text="¡Bienvenido, Dr. (apellido)!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Open Sans ExtraBold" size="32.0" />
          </font>
       </Label>
-      <ImageView fitHeight="93.0" fitWidth="80.0" layoutX="65.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="93.0" fitWidth="80.0" layoutX="73.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/LogoHospitalUQ.png" />
          </image>
       </ImageView>
-      <Button layoutX="1150.0" layoutY="64.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cerrar Sesión" textFill="WHITE">
+      <Button layoutX="1159.0" layoutY="58.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cerrar Sesión" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="290.0" layoutY="252.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Mis datos personales" textFill="WHITE">
+      <Button layoutX="269.0" layoutY="252.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="378.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Pacientes asignados" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="753.0" layoutY="252.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Citas médicas" textFill="WHITE">
+      <Button layoutX="753.0" layoutY="252.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="378.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Citas del dia" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="290.0" layoutY="347.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Notificaciones" textFill="WHITE">
+      <Button layoutX="269.0" layoutY="347.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="378.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Ver historial médico" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="753.0" layoutY="347.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Solicitar cita médica" textFill="WHITE">
+      <Button layoutX="753.0" layoutY="347.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="378.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Registrar Diagnostico" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="290.0" layoutY="439.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Historial médico" textFill="WHITE">
+      <Button layoutX="269.0" layoutY="439.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="378.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Horario de atención" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="753.0" layoutY="439.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cancelar cita" textFill="WHITE">
+      <Button layoutX="753.0" layoutY="439.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="378.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Notificaciones" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
       </Button>
+      <Text fill="WHITE" layoutX="444.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aquí puede gestionar a sus pacientes y registrar consultas">
+         <font>
+            <Font name="Lato Bold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="47.0" fitWidth="31.0" layoutX="288.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Emojis/EmojiPersona.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="290.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Emojis/EmojiPapel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="31.0" layoutX="288.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Emojis/EmojiReloj.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="31.0" layoutX="820.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Emojis/EmojiCalendario.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="31.0" layoutX="763.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Emojis/EmojiPapelLapiz.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="31.0" layoutX="814.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Emojis/EmojiCampana.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
