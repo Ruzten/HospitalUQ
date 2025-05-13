@@ -24,12 +24,12 @@
       </ImageView>
       <Text fill="WHITE" layoutX="569.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicia sesión" textAlignment="CENTER" wrappingWidth="313.13671875">
          <font>
-            <Font size="52.0" />
+            <Font name="Open Sans SemiBold" size="52.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="569.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" textAlignment="CENTER" wrappingWidth="313.13671875">
          <font>
-            <Font size="28.0" />
+            <Font name="Lato Bold" size="28.0" />
          </font>
       </Text>
       <TextField alignment="CENTER" layoutX="491.0" layoutY="244.0" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su usuario (Cedula)" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
@@ -47,7 +47,7 @@
          </font></PasswordField>
       <Text fill="WHITE" layoutX="569.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Olvidaste tu contraseña?" textAlignment="CENTER" wrappingWidth="313.13671875">
          <font>
-            <Font size="17.0" />
+            <Font name="Lato Bold" size="17.0" />
          </font>
       </Text>
       <Button layoutX="529.0" layoutY="477.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="394.0" style="-fx-background-radius: 100px; -fx-background-color: #132540;" text="Continuar" textFill="WHITE">
@@ -60,7 +60,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
-            <Font size="18.0" />
+            <Font name="Lato Bold" size="18.0" />
          </font></Button>
    </children>
 </AnchorPane>

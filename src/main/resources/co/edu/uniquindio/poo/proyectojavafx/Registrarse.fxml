@@ -24,7 +24,7 @@
       </ImageView>
       <Text fill="WHITE" layoutX="569.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate" textAlignment="CENTER" wrappingWidth="313.13671875">
          <font>
-            <Font size="52.0" />
+            <Font name="Open Sans SemiBold" size="52.0" />
          </font>
       </Text>
       <Button layoutX="1159.0" layoutY="40.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="46.0" prefWidth="197.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Salir" textFill="WHITE">
@@ -32,76 +32,76 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
-            <Font size="18.0" />
+            <Font name="Lato Bold" size="18.0" />
          </font></Button>
       <Text fill="WHITE" layoutX="361.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Llena todos los campos para crear tu cuenta y poder acceder a nuestros servicios médicos" textAlignment="CENTER" wrappingWidth="729.13671875">
          <font>
-            <Font size="17.0" />
+            <Font name="Lato Bold" size="17.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="337.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula:" textAlignment="CENTER" wrappingWidth="67.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="337.0" layoutY="214.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su cedula" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="333.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genero:" textAlignment="CENTER" wrappingWidth="78.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="337.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres:" textAlignment="CENTER" wrappingWidth="87.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="337.0" layoutY="367.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese sus nombres" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="335.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos:" textAlignment="CENTER" wrappingWidth="94.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="337.0" layoutY="444.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese sus apellidos" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="337.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de Nacimiento" textAlignment="CENTER" wrappingWidth="190.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="337.0" layoutY="521.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su fecha de nacimiento" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="819.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Télefono:" textAlignment="CENTER" wrappingWidth="87.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="821.0" layoutY="213.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su número telefonico" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="821.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo:" textAlignment="CENTER" wrappingWidth="67.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="821.0" layoutY="289.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion de correo" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="821.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección:" textAlignment="CENTER" wrappingWidth="87.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="821.0" layoutY="366.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion (vivienda)" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="819.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" textAlignment="CENTER" wrappingWidth="110.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <TextField layoutX="821.0" layoutY="443.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su nueva contraseña" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="817.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de sangre:" textAlignment="CENTER" wrappingWidth="147.13671875">
          <font>
-            <Font size="20.0" />
+            <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
       <ChoiceBox accessibleRole="CHECK_BOX" layoutX="337.0" layoutY="293.0" prefHeight="30.0" prefWidth="298.0" style="-fx-background-radius: 100px; -fx-background-color: #00619d;" />
       <ChoiceBox accessibleRole="CHECK_BOX" layoutX="821.0" layoutY="523.0" prefHeight="30.0" prefWidth="298.0" style="-fx-background-radius: 100px; -fx-background-color: #00619d;" />
       <Button layoutX="546.0" layoutY="633.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="360.0" style="-fx-background-radius: 100px; -fx-background-color: #132540;" text="Continuar" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font name="Lato Bold" size="30.0" />
          </font>
       </Button>
    </children>
