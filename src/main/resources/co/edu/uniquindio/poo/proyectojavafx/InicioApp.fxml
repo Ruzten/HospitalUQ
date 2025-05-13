@@ -7,36 +7,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="642.0" prefWidth="1142.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.InicioAppViewController">
+<AnchorPane maxHeight="800.0" maxWidth="1400.0" minHeight="800.0" minWidth="1400.0" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.InicioAppViewController">
    <children>
-      <ImageView fitHeight="738.0" fitWidth="1212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="800.0" fitWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../../../../Images/FondoInicial.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="744.0" fitWidth="492.0" layoutX="720.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="800.0" fitWidth="534.0" layoutX="868.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/enfermeraHospitalUQ.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="310.0" fitWidth="368.0" layoutX="204.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="340.0" fitWidth="429.0" layoutX="244.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/LogoHospitalUQ.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="142.0" layoutY="389.0" mnemonicParsing="false" onAction="#AbrirLogin" prefHeight="63.0" prefWidth="433.0" style="-fx-background-color: #041f44; -fx-background-radius: 100px;;" text="Iniciar sesión" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button alignment="CENTER" layoutX="182.0" layoutY="446.0" mnemonicParsing="false" onAction="#AbrirLogin" prefHeight="63.0" prefWidth="467.0" style="-fx-background-color: #041f44; -fx-background-radius: 100px;;" text="Iniciar sesión" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Montserrat SemiBold" size="21.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ImageView fitHeight="32.0" fitWidth="27.0" layoutX="247.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="312.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/LlaveInicioSesion.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="136.0" layoutY="487.0" mnemonicParsing="false" onAction="#AbrirRegistrarse" prefHeight="63.0" prefWidth="433.0" style="-fx-background-color: #041f44; -fx-background-radius: 100px;;" text="Registrarse" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button alignment="CENTER" layoutX="179.0" layoutY="541.0" mnemonicParsing="false" onAction="#AbrirRegistrarse" prefHeight="63.0" prefWidth="467.0" style="-fx-background-color: #041f44; -fx-background-radius: 100px;;" text="Registrarse" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Montserrat SemiBold" size="21.0" />
          </font>
@@ -44,7 +44,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="83.0" fitWidth="27.0" layoutX="252.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="83.0" fitWidth="27.0" layoutX="312.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/PapelLapizRegistrar.png" />
          </image>

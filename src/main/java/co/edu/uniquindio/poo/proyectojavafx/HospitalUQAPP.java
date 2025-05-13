@@ -6,16 +6,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
-public class App extends Application {
+public class HospitalUQAPP extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("InicioApp.fxml"));
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Images/HospitalUQLOGO.png")));
 
-
-
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.setWidth(1400);
+        primaryStage.setHeight(787);
+        primaryStage.setResizable(false);
+        primaryStage.centerOnScreen();
+
         primaryStage.setTitle("HospitalUQ");
 
         primaryStage.show();
