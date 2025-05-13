@@ -29,4 +29,20 @@ public class Paciente extends Persona {
     public void agregarHistorialMedico(HistorialMedico historial) {
         this.historialMedico.add(historial);
     }
+
+    public List<HistorialMedico> getHistorialMedico() {
+        return historialMedico;
+    }
+
+    public void setHistorialMedico(List<HistorialMedico> historialMedico) {
+        this.historialMedico = historialMedico;
+    }
+
+    public TipoSangre getRh() {
+        return rh;
+    }
+
+    public void setRh(TipoSangre rh) {
+        this.rh = rh;
+    }
 }
