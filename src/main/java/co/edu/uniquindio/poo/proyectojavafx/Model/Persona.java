@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.proyectojavafx.Model;
 import java.util.Objects;
 
 public abstract class Persona {
-    private String id;
+    protected String id;
     private Genero genero;
     private String nombres;
     private String apellidos;

@@ -105,7 +105,6 @@ public class HospitalUQ {
     }
 
     public Medico ActualizarMedico(Medico newmedico) {
-        boolean flag = false;
         for (Medico medico : listaMedicos) {
             if (medico.getId().equals(newmedico.getId())) {
                 medico.setGenero(newmedico.getGenero());
@@ -138,23 +137,31 @@ public class HospitalUQ {
     }
 
     public Paciente actualizarPaciente(Paciente actuPaciente) {
-        boolean flag = false;
+        if(actuPaciente == null || actuPaciente.getId() == null){
+            return null;
+        }
+
         for (Paciente paciente : listaPacientes) {
             if (paciente.getId().equals(actuPaciente.getId())) {
-                paciente.setGenero(actuPaciente.getGenero());
-                paciente.setNombres(actuPaciente.getNombres());
-                paciente.setApellidos(actuPaciente.getApellidos());
-                paciente.setEdad(actuPaciente.getEdad());
-                paciente.setTelefono(actuPaciente.getTelefono());
-                paciente.setCorreo(actuPaciente.getCorreo());
-                paciente.setDireccion(actuPaciente.getDireccion());
-                paciente.setContrasena(actuPaciente.getContrasena());
-                paciente.setFechaNacimiento(actuPaciente.getFechaNacimiento());
-                paciente.setRh(actuPaciente.getRh());
-                paciente.setHistorialMedico(actuPaciente.getHistorialMedico());
+                try {
+                    paciente.setGenero(actuPaciente.getGenero());
+                    paciente.setNombres(actuPaciente.getNombres());
+                    paciente.setApellidos(actuPaciente.getApellidos());
+                    paciente.setEdad(actuPaciente.getEdad());
+                    paciente.setTelefono(actuPaciente.getTelefono());
+                    paciente.setCorreo(actuPaciente.getCorreo());
+                    paciente.setDireccion(actuPaciente.getDireccion());
+                    paciente.setContrasena(actuPaciente.getContrasena());
+                    paciente.setFechaNacimiento(actuPaciente.getFechaNacimiento());
+                    paciente.setRh(actuPaciente.getRh());
+                    paciente.setHistorialMedico(actuPaciente.getHistorialMedico());
 
-                return paciente;
+                    return paciente;
+                }catch (Exception e) {
+                    throw e;
+                }
             }
+            return null;
         }
 
         return null;
@@ -187,6 +194,9 @@ public class HospitalUQ {
             return false;
         }
 
+        String Id = String.format("P%010d", listaPacientes.size() + 1);
+        newpaciente.setId(Id);
+
         if (newpaciente.getId() == null || newpaciente.getId().trim().isEmpty()) {
             return false;
         }
@@ -216,5 +226,31 @@ public class HospitalUQ {
             }
         }
         return  false;
+    }
+
+    public List<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente){
+        Paciente paciente = buscarPaciente(idPaciente);
+        if(paciente != null){
+            return paciente.getHistorialMedico();
+        }
+        return null;
+    }
+
+    public List<Paciente> obtenerPacientes(){
+        List<Paciente> newlistPacientes = new LinkedList<>();
+        for(Paciente paciente : this.listaPacientes){
+            newlistPacientes.add(paciente);
+        }
+        return listaPacientes;
+    }
+
+    public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
+        Paciente paciente = buscarPaciente(idPaciente);
+        if(paciente != null){
+            HistorialMedico nuevoHistorialMedico = new HistorialMedico(historialMedico.getFecha(), historialMedico.getDiagnostico(), historialMedico.getTratamiento(), historialMedico.getObservaciones(), historialMedico.getMedicoTratante());
+            paciente.getHistorialMedico().add(nuevoHistorialMedico);
+            return true;
+        }
+        return false;
     }
 }
