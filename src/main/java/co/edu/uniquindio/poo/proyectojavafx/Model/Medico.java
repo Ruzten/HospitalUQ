@@ -3,16 +3,16 @@ package co.edu.uniquindio.poo.proyectojavafx.Model;
 import java.util.List;
 
 public class Medico extends Persona {
-    private String matriculaLicencia;
+    private String NLicencia;
     private boolean certificado;
     private List<Horario> horarios;
     private String ubicacion;
     private Estado estado;
     private Especialidad especialidad;
 
-    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String matriculaLicencia, boolean certificado, List<Horario> horarios, String ubicacion, Estado estado, Especialidad especialidad) {
-        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contraseña);
-        this.matriculaLicencia = matriculaLicencia;
+    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, String NuLicencia, boolean certificado, List<Horario> horarios, String ubicacion, Estado estado, Especialidad especialidad) {
+        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
+        this.NLicencia = NuLicencia;
         this.certificado = certificado;
         this.horarios = horarios;
         this.ubicacion = ubicacion;
@@ -20,15 +20,15 @@ public class Medico extends Persona {
         this.especialidad = especialidad;
     }
 
-    public String getMatriculaLicencia() {
-        return matriculaLicencia;
+    public String getNLicencia() {
+        return NLicencia;
     }
 
-    public void setMatriculaLicencia(String matriculaLicencia) {
-        this.matriculaLicencia = matriculaLicencia;
+    public void setNLicencia(String NLicencia) {
+        this.NLicencia = NLicencia;
     }
 
-    public boolean isCertificado() {
+    public boolean getCertificado() {
         return certificado;
     }
 
