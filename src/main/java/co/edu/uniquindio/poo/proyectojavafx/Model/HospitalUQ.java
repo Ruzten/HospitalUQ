@@ -70,9 +70,6 @@ public class HospitalUQ {
         this.nombre = nombre;
     }
 
-
-    // METODOS CREAR OBJETOS
-
     public boolean crearMedico(Medico newMedico) {
         if (newMedico == null) {
             return false;
