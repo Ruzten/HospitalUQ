@@ -73,19 +73,26 @@ public class HospitalUQ {
 
     // METODOS CREAR OBJETOS
 
-    public boolean crearMedico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String matriculaLicencia, boolean certificado, String ubicacion, Estado estado, Especialidad especialidad) {
-        boolean flag = false;
-        for (Persona persona : listaMedicos) {
-            if (persona.getId().equals(id)) {
-                return flag;
+    public boolean crearMedico(Medico newMedico) {
+        if (newMedico == null) {
+            return false;
+        }
 
+        if (newMedico.getId() == null || newMedico.getId().trim().isEmpty()) {
+            return false;
+        }
+
+        // Verificar que no hay duplicados
+        for (Medico medico : listaMedicos) {
+            if (medico.getId().equals(newMedico.getId())) {
+                return false;
             }
         }
-        Medico nuevoMedico = new Medico(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contraseña, matriculaLicencia, certificado, null, ubicacion, estado, especialidad);
-        listaMedicos.add(nuevoMedico);
-        flag = true;
-        return flag;
+
+        listaMedicos.add(newMedico);
+        return true;
     }
+
 
 
     public boolean eliminarMedico(String id) {
