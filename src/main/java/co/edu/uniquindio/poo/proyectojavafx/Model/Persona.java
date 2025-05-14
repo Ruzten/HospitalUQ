@@ -88,6 +88,10 @@ public abstract class Persona {
         return contraseña;
     }
 
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
     public void setContraseña(String contraseña){
         this.contraseña = contraseña;
     }
