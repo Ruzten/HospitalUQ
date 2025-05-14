@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.InterfazPacienteViewController">
    <children>
       <ImageView fitHeight="787.0" fitWidth="1411.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,14 +25,20 @@
             <Image url="@../../../../../Images/LogoHospitalUQ.png" />
          </image>
       </ImageView>
-      <Button layoutX="1150.0" layoutY="64.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cerrar Sesión" textFill="WHITE">
+      <Button layoutX="1150.0" layoutY="64.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cerrar Sesión" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="14.0" />
-         </font></Button>
-      <Button layoutX="263.0" layoutY="252.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="384.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Mis datos personales" textFill="WHITE">
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="263.0" layoutY="252.0" mnemonicParsing="false" onAction="#IrAMisDatosPersonales" prefHeight="56.0" prefWidth="384.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Mis datos personales" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button layoutX="753.0" layoutY="252.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="384.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Citas médicas" textFill="WHITE">
          <font>

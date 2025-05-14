@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 public class HospitalUQAPP extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("InicioAPP.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("InterfazPaciente.fxml"));
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Images/HospitalUQLOGO.png")));
 
         Scene scene = new Scene(root);
