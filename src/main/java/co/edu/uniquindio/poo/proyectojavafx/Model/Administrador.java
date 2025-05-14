@@ -8,5 +8,5 @@ public class Administrador extends Persona {
     }
 
 
-    // ... (recordar: clase con metodos)
+
 }
