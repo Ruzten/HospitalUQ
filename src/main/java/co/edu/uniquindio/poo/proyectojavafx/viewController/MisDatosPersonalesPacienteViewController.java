@@ -19,4 +19,12 @@ public class MisDatosPersonalesPacienteViewController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    @FXML
+    public void IrEditarDatosPersonalesPaciente(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/EditarDatosPersonalesPaciente.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
