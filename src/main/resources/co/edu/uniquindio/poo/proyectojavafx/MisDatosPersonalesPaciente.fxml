@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.MisDatosPersonalesPacienteViewController">
    <children>
       <ImageView fitHeight="787.0" fitWidth="1411.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -124,16 +125,22 @@
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Text fill="WHITE" layoutX="917.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(tipoSangre)">
          <font>
             <Font name="Lato Bold" size="27.0" />
          </font>
       </Text>
-      <Button layoutX="724.0" layoutY="638.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="265.0" style="-fx-background-color: #132540; -fx-background-radius: 100;" text="Cancelar" textFill="WHITE">
+      <Button layoutX="724.0" layoutY="638.0" mnemonicParsing="false" onAction="#VolverInterfazPaciente" prefHeight="47.0" prefWidth="265.0" style="-fx-background-color: #132540; -fx-background-radius: 100;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>
