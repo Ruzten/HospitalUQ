@@ -40,5 +40,17 @@ public class MedicoController {
         return hospitalUQ.actualizarPaciente(paciente);
   }
 
+  public Medico actualizarMedico(Medico medico){
+        return hospitalUQ.ActualizarMedico(medico);
+  }
+
+  public boolean eliminarMedico(String id){
+        return hospitalUQ.eliminarMedico(id);
+  }
+
+  public Medico buscarMedico(String id){
+        return hospitalUQ.buscarMedico(id);
+  }
+
 
 }
