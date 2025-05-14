@@ -107,24 +107,24 @@ public class HospitalUQ {
         return flag;
     }
 
-    public Medico ActualizarMedico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String matriculaLicencia, boolean certificado, String ubicacion, Estado estado, Especialidad especialidad) {
+    public Medico ActualizarMedico(Medico newmedico) {
         boolean flag = false;
         for (Medico medico : listaMedicos) {
-            if (medico.getId().equals(id)) {
-                medico.setGenero(genero);
-                medico.setNombres(nombres);
-                medico.setApellidos(apellidos);
-                medico.setEdad(edad);
-                medico.setTelefono(telefono);
-                medico.setCorreo(correo);
-                medico.setDireccion(direccion);
-                medico.setContraseña(contraseña);
-                medico.setMatriculaLicencia(matriculaLicencia);
-                medico.setCertificado(certificado);
-                medico.setUbicacion(ubicacion);
-                medico.setEstado(estado);
-                medico.setEspecialidad(especialidad);
-
+            if (medico.getId().equals(newmedico.getId())) {
+                medico.setGenero(newmedico.getGenero());
+                medico.setNombres(newmedico.getNombres());
+                medico.setApellidos(newmedico.getApellidos());
+                medico.setEdad(newmedico.getEdad());
+                medico.setTelefono(newmedico.getTelefono());
+                medico.setCorreo(newmedico.getCorreo());
+                medico.setDireccion(newmedico.getDireccion());
+                medico.setContrasena(newmedico.getContrasena());
+                medico.setNLicencia(newmedico.getNLicencia());
+                medico.setUbicacion(newmedico.getUbicacion());
+                medico.setEstado(newmedico.getEstado());
+                medico.setEspecialidad(newmedico.getEspecialidad());
+                medico.setHorarios(newmedico.getHorarios());
+                medico.setCertificado(newmedico.getCertificado());
                 return medico;
             }
         }
@@ -140,20 +140,21 @@ public class HospitalUQ {
         return null;
     }
 
-    public Paciente actualizarPaciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String fechaNacimiento, TipoSangre rh) {
+    public Paciente actualizarPaciente(Paciente actuPaciente) {
         boolean flag = false;
         for (Paciente paciente : listaPacientes) {
-            if (paciente.getId().equals(id)) {
-                paciente.setGenero(genero);
-                paciente.setNombres(nombres);
-                paciente.setApellidos(apellidos);
-                paciente.setEdad(edad);
-                paciente.setTelefono(telefono);
-                paciente.setCorreo(correo);
-                paciente.setDireccion(direccion);
-                paciente.setContraseña(contraseña);
-                paciente.setFechaNacimiento(fechaNacimiento);
-                paciente.setRh(rh);
+            if (paciente.getId().equals(actuPaciente.getId())) {
+                paciente.setGenero(actuPaciente.getGenero());
+                paciente.setNombres(actuPaciente.getNombres());
+                paciente.setApellidos(actuPaciente.getApellidos());
+                paciente.setEdad(actuPaciente.getEdad());
+                paciente.setTelefono(actuPaciente.getTelefono());
+                paciente.setCorreo(actuPaciente.getCorreo());
+                paciente.setDireccion(actuPaciente.getDireccion());
+                paciente.setContrasena(actuPaciente.getContrasena());
+                paciente.setFechaNacimiento(actuPaciente.getFechaNacimiento());
+                paciente.setRh(actuPaciente.getRh());
+                paciente.setHistorialMedico(actuPaciente.getHistorialMedico());
 
                 return paciente;
             }
@@ -184,22 +185,39 @@ public class HospitalUQ {
     }
 
 
-    public boolean crearPaciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String fechaNacimiento, TipoSangre rh, List<HistorialMedico> listaHistorialMedico) {
-        boolean flag = false;
-        for (Persona persona : listaPacientes) {
-            if (persona.getId().equals(id)) {
-                return flag;
-            }
+    public boolean crearPaciente(Paciente newpaciente) {
+        if (newpaciente == null) {
+            return false;
         }
-        Paciente nuevoPaciente = new Paciente(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contraseña, fechaNacimiento, rh);
 
-        if (listaDeHistorialesMedicos != null) {
-            for (HistorialMedico historial : listaDeHistorialesMedicos) {
-                nuevoPaciente.getHistorialMedico().add(historial);
+        if (newpaciente.getId() == null || newpaciente.getId().trim().isEmpty()) {
+            return false;
+        }
+
+        // Verificar que no hay duplicados
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(newpaciente.getId())) {
+                return false;
             }
         }
-        listaPacientes.add(nuevoPaciente);
-        flag = true;
-        return flag;
+
+        listaPacientes.add(newpaciente);
+        return true;
+    }
+
+    public boolean ActualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
+        Paciente paciente = buscarPaciente(idPaciente);
+        if(paciente != null){
+            List<HistorialMedico> historialMedicos = paciente.getHistorialMedico();
+            for(int i = 0; i < historialMedicos.size(); i++){
+                if(historialMedicos.get(i).getFecha().equals(historialMedico.getFecha())){
+                    historialMedicos.get(i).setDiagnostico(historialMedico.getDiagnostico());
+                    historialMedicos.get(i).setTratamiento(historialMedico.getTratamiento());
+                    historialMedicos.get(i).setObservaciones(historialMedico.getObservaciones());
+                    return true;
+                }
+            }
+        }
+        return  false;
     }
 }

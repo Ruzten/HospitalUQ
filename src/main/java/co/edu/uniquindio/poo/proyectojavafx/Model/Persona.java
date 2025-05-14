@@ -11,9 +11,9 @@ public abstract class Persona {
     private String telefono;
     private String correo;
     private String direccion;
-    private String contraseña;
+    private String contrasena;
 
-    public Persona(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña) {
+    public Persona(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena) {
         this.id = id;
         this.genero = genero;
         this.nombres = nombres;
@@ -22,7 +22,7 @@ public abstract class Persona {
         this.telefono = telefono;
         this.correo = correo;
         this.direccion = direccion;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public String getId() {
@@ -84,15 +84,15 @@ public abstract class Persona {
         this.direccion = direccion;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
-    public void setContraseña(String contraseña){
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena){
+        this.contrasena = contrasena;
     }
 }

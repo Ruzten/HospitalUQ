@@ -45,4 +45,5 @@ public class Paciente extends Persona {
     public void setRh(TipoSangre rh) {
         this.rh = rh;
     }
+
 }
