@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo.proyectojavafx.Model;
-import java.util.ArrayList;
-import java.util.LinkedList;
+
 import java.util.List;
+import java.util.LinkedList;
 
 public class HospitalUQ {
     private String nombre;
@@ -88,22 +88,22 @@ public class HospitalUQ {
     }
 
 
-    public boolean eliminarMedico(String id){
+    public boolean eliminarMedico(String id) {
         boolean flag = false;
-        for (Medico medico : listaMedicos){
-            if (medico.getId().equals(id)){
+        for (Medico medico : listaMedicos) {
+            if (medico.getId().equals(id)) {
                 listaMedicos.remove(medico);
                 flag = true;
-                return  true;
+                return true;
             }
         }
         return flag;
     }
 
-    public Medico ActualizarMedico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String matriculaLicencia, boolean certificado, String ubicacion, Estado estado, Especialidad especialidad){
+    public Medico ActualizarMedico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String matriculaLicencia, boolean certificado, String ubicacion, Estado estado, Especialidad especialidad) {
         boolean flag = false;
-        for (Medico medico : listaMedicos){
-            if (medico.getId().equals(id)){
+        for (Medico medico : listaMedicos) {
+            if (medico.getId().equals(id)) {
                 medico.setGenero(genero);
                 medico.setNombres(nombres);
                 medico.setApellidos(apellidos);
@@ -124,19 +124,19 @@ public class HospitalUQ {
         return null;
     }
 
-    public Medico buscarMedico(String id){
-        for (Medico medico : listaMedicos){
-            if (medico.getId().equals(id)){
+    public Medico buscarMedico(String id) {
+        for (Medico medico : listaMedicos) {
+            if (medico.getId().equals(id)) {
                 return medico;
             }
         }
         return null;
     }
 
-    public Paciente actualizarPaciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String fechaNacimiento, TipoSangre rh){
+    public Paciente actualizarPaciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String fechaNacimiento, TipoSangre rh) {
         boolean flag = false;
-        for (Paciente paciente : listaPacientes){
-            if (paciente.getId().equals(id)){
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(id)) {
                 paciente.setGenero(genero);
                 paciente.setNombres(nombres);
                 paciente.setApellidos(apellidos);
@@ -152,28 +152,47 @@ public class HospitalUQ {
             }
         }
 
-        return  null;
+        return null;
     }
 
-    public boolean eliminarPaciente(String id){
+    public boolean eliminarPaciente(String id) {
         boolean flag = false;
-        for (Paciente paciente : listaPacientes){
-            if (paciente.getId().equals(id)){
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(id)) {
                 listaPacientes.remove(paciente);
                 flag = true;
-                return  true;
+                return true;
             }
         }
         return flag;
     }
 
-    public Paciente buscarPaciente(String id){
-        for (Paciente paciente : listaPacientes){
-            if (paciente.getId().equals(id)){
+    public Paciente buscarPaciente(String id) {
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(id)) {
                 return paciente;
             }
         }
         return null;
     }
 
+
+    public boolean crearPaciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String fechaNacimiento, TipoSangre rh, List<HistorialMedico> listaHistorialMedico) {
+        boolean flag = false;
+        for (Persona persona : listaPacientes) {
+            if (persona.getId().equals(id)) {
+                return flag;
+            }
+        }
+        Paciente nuevoPaciente = new Paciente(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contraseña, fechaNacimiento, rh);
+
+        if (listaDeHistorialesMedicos != null) {
+            for (HistorialMedico historial : listaDeHistorialesMedicos) {
+                nuevoPaciente.getHistorialMedico().add(historial);
+            }
+        }
+        listaPacientes.add(nuevoPaciente);
+        flag = true;
+        return flag;
+    }
 }
