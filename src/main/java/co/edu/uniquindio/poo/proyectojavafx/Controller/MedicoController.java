@@ -1,9 +1,9 @@
-package co.edu.uniquindio.poo.proyectojavafx.Controller;
+package co.edu.uniquindio.poo.proyectojavafx.controller;
 
-import co.edu.uniquindio.poo.proyectojavafx.Model.HistorialMedico;
-import co.edu.uniquindio.poo.proyectojavafx.Model.HospitalUQ;
-import co.edu.uniquindio.poo.proyectojavafx.Model.Medico;
-import co.edu.uniquindio.poo.proyectojavafx.Model.Paciente;
+import co.edu.uniquindio.poo.proyectojavafx.model.HistorialMedico;
+import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
+import co.edu.uniquindio.poo.proyectojavafx.model.Medico;
+import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
 
 import java.util.List;
 

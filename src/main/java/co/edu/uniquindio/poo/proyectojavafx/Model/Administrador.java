@@ -1,10 +1,9 @@
-package co.edu.uniquindio.poo.proyectojavafx.Model;
+package co.edu.uniquindio.poo.proyectojavafx.model;
 
 public class Administrador extends Persona {
 
-    public Administrador(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String departamento, String nivelAcceso) {
-        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contraseña);
-
+    public Administrador(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena) {
+        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
     }
 
 

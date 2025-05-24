@@ -32,7 +32,7 @@
             <Font name="Lato Bold" size="28.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="491.0" layoutY="244.0" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su usuario (Cedula)" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
+      <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="491.0" layoutY="244.0" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su usuario (Cedula)" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
          <font>
             <Font size="15.0" />
          </font></TextField>
@@ -41,7 +41,7 @@
             <Font size="28.0" />
          </font>
       </Text>
-      <PasswordField alignment="CENTER" layoutX="491.0" layoutY="354.0" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su contraseña" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
+      <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="491.0" layoutY="354.0" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su contraseña" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
          <font>
             <Font size="15.0" />
          </font></PasswordField>
@@ -50,10 +50,13 @@
             <Font name="Lato Bold" size="17.0" />
          </font>
       </Text>
-      <Button layoutX="529.0" layoutY="477.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="394.0" style="-fx-background-radius: 100px; -fx-background-color: #132540;" text="Continuar" textFill="WHITE">
+      <Button layoutX="529.0" layoutY="477.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="62.0" prefWidth="394.0" style="-fx-background-radius: 100px; -fx-background-color: #132540;" text="Continuar" textFill="WHITE">
          <font>
             <Font size="26.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button layoutX="1159.0" layoutY="40.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="46.0" prefWidth="197.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Salir" textFill="WHITE">
          <cursor>

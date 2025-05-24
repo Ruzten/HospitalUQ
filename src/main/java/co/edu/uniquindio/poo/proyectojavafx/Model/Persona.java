@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.proyectojavafx.Model;
+package co.edu.uniquindio.poo.proyectojavafx.model;
 
 import java.util.Objects;
 

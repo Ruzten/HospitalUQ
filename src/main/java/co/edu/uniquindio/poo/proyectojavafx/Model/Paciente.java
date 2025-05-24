@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.proyectojavafx.Model;
+package co.edu.uniquindio.poo.proyectojavafx.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ public class Paciente extends Persona {
     private TipoSangre rh;
     private List<HistorialMedico> historialMedico;
 
-    public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contraseña, String fechaNacimiento, TipoSangre rh) {
-        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contraseña);
+    public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, String fechaNacimiento, TipoSangre rh) {
+        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
         this.fechaNacimiento = fechaNacimiento;
         this.rh = rh;
         this.historialMedico = new ArrayList<>();
