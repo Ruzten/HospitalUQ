@@ -37,21 +37,31 @@ public class LoginViewController {
 
         if (usuarioValido != null) {
             // Redirigir según el tipo de usuario
-            if (usuarioValido instanceof Paciente) {
+            if (usuarioValido instanceof Paciente paciente) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml"));
                 Parent root = fxmlLoader.load();
+
+                InterfazPacienteViewController controller = fxmlLoader.getController();
+                controller.inicializarPaciente(paciente);
+
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
-            } else if (usuarioValido instanceof Medico) {
+
+            } else if (usuarioValido instanceof Medico medico) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml"));
                 Parent root = fxmlLoader.load();
+
+                InterfazMedicoViewController controller = fxmlLoader.getController();
+                controller.inicializarMedico(medico);
+
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
-            } else if (usuarioValido instanceof Administrador) {
+            } else if (usuarioValido instanceof Administrador admin) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml"));
                 Parent root = fxmlLoader.load();
+
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();

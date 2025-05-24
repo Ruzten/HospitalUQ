@@ -15,7 +15,7 @@
             <Image url="@../../../../../Images/InterfazPaciente.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="428.0" layoutY="68.0" prefHeight="47.0" prefWidth="543.0" text="¡Bienvenido, (nombre) (apellido)!" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="mensajeBienvenida" alignment="CENTER" contentDisplay="CENTER" layoutX="428.0" layoutY="68.0" prefHeight="47.0" prefWidth="543.0" text="¡Bienvenido, (nombre) (apellido)!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Open Sans ExtraBold" size="32.0" />
          </font>
