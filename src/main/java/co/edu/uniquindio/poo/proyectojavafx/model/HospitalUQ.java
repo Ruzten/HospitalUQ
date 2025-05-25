@@ -80,7 +80,7 @@ public class HospitalUQ {
         listaMedicos.add(medicoPrueba);
         Administrador adminPrueba = new Administrador(
                 "admin",                           // id (por ejemplo, un ID único para administradores)
-                Genero.FEMENINO,                        // genero (puedes usar MASCULINO, FEMENINO u OTRO)
+                Genero.MASCULINO,                        // genero (puedes usar MASCULINO, FEMENINO u OTRO)
                 "Ruben",                              // nombres
                 "Sanchez",                           // apellidos
                 17,                                 // edad

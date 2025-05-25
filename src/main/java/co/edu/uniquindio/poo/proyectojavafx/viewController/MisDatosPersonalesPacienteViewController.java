@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,4 +28,21 @@ public class MisDatosPersonalesPacienteViewController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    @FXML
+    private Text txtCedula;
+    @FXML
+    private Text txtGenero;
+    @FXML
+    private Text txtNombres;
+    @FXML
+    private Text txtApellidos;
+    @FXML
+    private Text txtfechaNacimiento;
+    @FXML
+    private Text txtTelefono;
+    @FXML
+    private Text txt;
+
+
 }
