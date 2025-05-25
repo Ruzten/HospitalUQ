@@ -32,7 +32,6 @@ public class HospitalUQ {
                 "Juan",                        // nombres
                 "Pérez",                       // apellidos
                 30,                            // edad
-                "123123133",// Documento
                 "3111234567",                  // teléfono
                 "juan@mail.com",              // correo
                 "Calle 123",                   // dirección
@@ -52,7 +51,6 @@ public class HospitalUQ {
                 "Laura",                        // nombres
                 "Gómez",                        // apellidos
                 40,                             // edad
-                "1234567890",                   // Documento
                 "3107894561",                   // teléfono
                 "laura@hospitaluq.com",         // correo
                 "Carrera 45 #10-12",            // dirección
@@ -192,7 +190,6 @@ public class HospitalUQ {
                 medico.setNombres(newmedico.getNombres());
                 medico.setApellidos(newmedico.getApellidos());
                 medico.setEdad(newmedico.getEdad());
-                medico.setNumeroDocumento(newmedico.getNumeroDocumento());
                 medico.setTelefono(newmedico.getTelefono());
                 medico.setCorreo(newmedico.getCorreo());
                 medico.setDireccion(newmedico.getDireccion());
@@ -403,7 +400,7 @@ public class HospitalUQ {
 
         // Verificar que no exista otro paciente con el mismo número de documento
         for (Paciente p : listaPacientes) {
-            if (p.getNumeroDocumento().equals(paciente.getNumeroDocumento())) {
+            if (p.getId().equals(paciente.getId())) {
                 return false;
             }
         }

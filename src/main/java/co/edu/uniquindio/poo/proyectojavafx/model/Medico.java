@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.proyectojavafx.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Medico extends Persona {
     private String NLicencia;
@@ -14,11 +15,11 @@ public class Medico extends Persona {
     private List<Cita> citasAsignadas;
     private List<HistorialMedico> historialesPacientes;
 
-    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String NumeroDocumento,
+    public Medico(String id, Genero genero, String nombres, String apellidos, int edad,
                   String telefono, String correo, String direccion, String contrasena,
                   String NuLicencia, boolean certificado, List<Horario> horarios,
                   String ubicacion, Estado estado, Especialidad especialidad) {
-        super(id, genero, nombres, apellidos, edad, NumeroDocumento, telefono, correo, direccion, contrasena);
+        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
         this.NLicencia = NuLicencia;
         this.certificado = certificado;
         this.horarios = horarios;
