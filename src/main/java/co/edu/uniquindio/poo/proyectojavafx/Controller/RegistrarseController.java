@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.proyectojavafx.controller;
+package co.edu.uniquindio.poo.proyectojavafx.Controller;
 
 import co.edu.uniquindio.poo.proyectojavafx.model.*;
 import co.edu.uniquindio.poo.proyectojavafx.viewController.RegistrarseViewController;
@@ -51,6 +51,7 @@ public class RegistrarseController {
                 fechaNacimiento,
                 rh,
                 historialMedicoVacio
+
         );
         nuevoPaciente.calcularYAsignarEdad();
         boolean exito = hospitalUQ.crearPaciente(nuevoPaciente);

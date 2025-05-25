@@ -9,7 +9,7 @@ public class Paciente extends Persona {
     private TipoSangre rh;
     private List<HistorialMedico> historialMedico;
 
-    public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, LocalDate fechaNacimiento, TipoSangre rh, List<HistorialMedico> historialMedico) {
+    public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, LocalDate fechaNacimiento, TipoSangre rh, List<HistorialMedico> historialMedicoVacio) {
         super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
         this.fechaNacimiento = fechaNacimiento;
         this.rh = rh;

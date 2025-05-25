@@ -51,6 +51,7 @@ public class HospitalUQ {
                 historialPaciente                           // historialMedico (la lista que creaste arriba)
         );
         listaPacientes.add(pacientePrueba);
+
         List<Horario> horariosPrueba = new LinkedList<>();
         horariosPrueba.add(new Horario(DayOfWeek.MONDAY, LocalTime.parse("08:00"), LocalTime.parse("12:00")  ));
 
@@ -79,15 +80,15 @@ public class HospitalUQ {
         );
         listaMedicos.add(medicoPrueba);
         Administrador adminPrueba = new Administrador(
-                "admin",                           // id (por ejemplo, un ID único para administradores)
-                Genero.MASCULINO,                        // genero (puedes usar MASCULINO, FEMENINO u OTRO)
-                "Ruben",                              // nombres
-                "Sanchez",                           // apellidos
-                17,                                 // edad
-                "3245870864",                       // telefono
-                "rubens.sancheze@uqvirtual.edu.co",          // correo
-                "Mi casa bro",                   // direccion
-                "admin"                         // contrasena
+                "admin",
+                Genero.MASCULINO,
+                "Alex",
+                "Ramírez",
+                35,
+                "3000000000",
+                "admin@hospitaluq.com",
+                "Oficina central",
+                "admin"
         );
         listaAdministradores.add(adminPrueba);
     }
