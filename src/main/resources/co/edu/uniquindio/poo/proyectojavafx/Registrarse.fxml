@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.RegistrarseViewController">
    <children>
-      <ImageView fitHeight="800.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="800.0" fitWidth="1400.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/FondoRegistrarse.png" />
          </image>
@@ -80,12 +80,12 @@
          </font>
       </Text>
       <TextField fx:id="direccion" layoutX="821.0" layoutY="366.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion (vivienda)" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="670.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" textAlignment="CENTER" wrappingWidth="110.13671875">
+      <Text fill="WHITE" layoutX="821.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" textAlignment="CENTER" wrappingWidth="110.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="contrasena" layoutX="578.0" layoutY="526.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su nueva contraseña" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <TextField fx:id="contrasena" layoutX="821.0" layoutY="512.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su nueva contraseña" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="818.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de sangre:" textAlignment="CENTER" wrappingWidth="147.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
@@ -106,5 +106,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </DatePicker>
+      <Text fill="WHITE" layoutX="340.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id:" textAlignment="CENTER" wrappingWidth="28.13671875">
+         <font>
+            <Font name="Lato Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="numeroDocumento" layoutX="335.0" layoutY="510.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su cédula" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
    </children>
 </AnchorPane>

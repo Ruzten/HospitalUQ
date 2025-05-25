@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.proyectojavafx.controller;
+package co.edu.uniquindio.poo.proyectojavafx.Controller;
 
 import co.edu.uniquindio.poo.proyectojavafx.model.HistorialMedico;
 import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
@@ -8,47 +8,43 @@ import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
 import java.util.List;
 
 public class MedicoController {
-    private Medico medico;
-    private HospitalUQ hospitalUQ;
+    private static Medico medico;
+    private static HospitalUQ hospitalUQ;
 
-    public MedicoController(HospitalUQ hospitalUQ, Medico medicoActual) {
-        this.hospitalUQ = hospitalUQ;
-        this.medico = medicoActual;
-    }
 
-   public Paciente buscarPaciente(String id){
+   public static Paciente buscarPaciente(String id){
        return hospitalUQ.buscarPaciente(id);
    }
 
-   public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
+   public static boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
         return hospitalUQ.agregarHistorialMedico(idPaciente, historialMedico);
    }
 
-   public boolean actualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
-       return hospitalUQ.ActualizarHistorialMedico(idPaciente, historialMedico);
+   public static boolean actualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
+       return hospitalUQ.actualizarHistorialMedico(idPaciente, historialMedico);
    }
 
-   public List<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente){
+   public static List<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente){
         return hospitalUQ.obtenerHistorialMedicoPaciente(idPaciente);
    }
 
-  public List<Paciente> obtenerPacientes(){
+  public static List<Paciente> obtenerPacientes(){
         return hospitalUQ.obtenerPacientes();
   }
 
-  public Paciente actualizarPaciente(Paciente paciente){
+  public static Paciente actualizarPaciente(Paciente paciente){
         return hospitalUQ.actualizarPaciente(paciente);
   }
 
-  public Medico actualizarMedico(Medico medico){
+  public static Medico actualizarMedico(Medico medico){
         return hospitalUQ.ActualizarMedico(medico);
   }
 
-  public boolean eliminarMedico(String id){
+  public static boolean eliminarMedico(String id){
         return hospitalUQ.eliminarMedico(id);
   }
 
-  public Medico buscarMedico(String id){
+  public static Medico buscarMedico(String id){
         return hospitalUQ.buscarMedico(id);
   }
 

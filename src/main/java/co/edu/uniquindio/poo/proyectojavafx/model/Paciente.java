@@ -10,11 +10,11 @@ public class Paciente extends Persona {
     private TipoSangre rh;
     private List<HistorialMedico> historialMedico;
 
-    public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, LocalDate fechaNacimiento, TipoSangre rh) {
-        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
+    public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String NumeroDocumento, String telefono, String correo, String direccion, String contrasena, LocalDate fechaNacimiento, TipoSangre rh, List<HistorialMedico> historialMedico) {
+        super(id, genero, nombres, apellidos, edad, NumeroDocumento, telefono, correo, direccion, contrasena);
         this.fechaNacimiento = fechaNacimiento;
         this.rh = rh;
-        this.historialMedico = new ArrayList<>();
+        this.historialMedico = historialMedico;
     }
 
     public Paciente(String id, Genero genero, String nombres, String apellidos, int edad, String correo, String direccion, TipoSangre rh, String contrasena, LocalDate fechaNacimiento) {
@@ -30,7 +30,6 @@ public class Paciente extends Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    // ... (continuar con los demás getters y setters)
 
     public void agregarHistorialMedico(HistorialMedico historial) {
         this.historialMedico.add(historial);

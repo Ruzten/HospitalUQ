@@ -1,7 +1,5 @@
 package co.edu.uniquindio.poo.proyectojavafx;
-import co.edu.uniquindio.poo.proyectojavafx.model.Genero;
 import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
-import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

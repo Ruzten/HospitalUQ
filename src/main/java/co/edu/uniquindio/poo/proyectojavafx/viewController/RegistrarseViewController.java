@@ -25,6 +25,7 @@ public class RegistrarseViewController {
     }
 
 
+
     @FXML
     public void volverInicio(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InicioApp.fxml"));
@@ -45,6 +46,8 @@ public class RegistrarseViewController {
     @FXML
     private TextField numeroTelefonico;
     @FXML
+    private TextField numeroDocumento;
+    @FXML
     private TextField correo;
     @FXML
     private TextField direccion;
@@ -56,7 +59,7 @@ public class RegistrarseViewController {
     private DatePicker fechaNacimiento;
 
     public void registrarse () {
-        registrarseController.registrarseUsuario(genero.getValue(), nombres.getText(), apellidos.getText(), numeroTelefonico.getText(), correo.getText(), direccion.getText(), rh.getValue(), contrasena.getText(), fechaNacimiento.getValue());
+        registrarseController.registrarseUsuario(genero.getValue(), nombres.getText(), apellidos.getText(), numeroTelefonico.getText(),numeroDocumento.getText(), correo.getText(), direccion.getText(), rh.getValue(), contrasena.getText(), fechaNacimiento.getValue());
     }
 
 }
