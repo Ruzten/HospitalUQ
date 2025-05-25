@@ -183,7 +183,6 @@ public class HospitalUQ {
     }
 
 
-
     public boolean eliminarMedico(String id) {
         boolean flag = false;
         for (Medico medico : listaMedicos) {
@@ -398,7 +397,7 @@ public class HospitalUQ {
         return flag;
     }
 
-    public static boolean crearPaciente(Paciente paciente) {
+    public boolean crearPaciente(Paciente paciente) {
         // Validar que el paciente no sea null
         if (paciente == null) {
             return false;

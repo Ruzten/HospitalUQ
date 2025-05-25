@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.proyectojavafx.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Medico extends Persona {
     private String NLicencia;
@@ -64,11 +65,20 @@ public class Medico extends Persona {
         historialesPacientes.add(historial);
     }
 
-    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento) {
+    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento, Medico medico) {
         if (historialesPacientes.contains(historial)) {
-            historial.agregarEntrada(new EntradaHistorial(diagnostico, tratamiento, this, LocalDateTime.now()));
+            String id = UUID.randomUUID().toString(); // Genera un ID único para la entrada
+            EntradaHistorial nuevaEntrada = new EntradaHistorial(
+                    id,
+                    diagnostico,
+                    tratamiento,
+                    medico,
+                    LocalDateTime.now()
+            );
+            historial.agregarEntrada(nuevaEntrada);
         }
     }
+
 
     public String getNLicencia() {
         return NLicencia;

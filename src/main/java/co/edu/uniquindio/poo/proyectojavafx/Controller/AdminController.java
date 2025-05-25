@@ -1,8 +1,11 @@
 package co.edu.uniquindio.poo.proyectojavafx.controller;
 
+import co.edu.uniquindio.poo.proyectojavafx.model.HistorialMedico;
 import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
 import co.edu.uniquindio.poo.proyectojavafx.model.Medico;
 import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
+
+import java.util.LinkedList;
 
 public class AdminController {
     private static Medico medico;
@@ -44,6 +47,16 @@ public class AdminController {
    public static boolean eliminarMedicoPaciente(String idMedico){
        return hospitalUQ.eliminarMedico(idMedico);
    }
+
+   public static LinkedList<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente){
+       return hospitalUQ.obtenerHistorialMedicoPaciente(idPaciente);
+   }
+
+
+   public static LinkedList<Paciente> obtenerPacientes(){
+       return hospitalUQ.getListaPacientes();
+   }
+
 
 
 
