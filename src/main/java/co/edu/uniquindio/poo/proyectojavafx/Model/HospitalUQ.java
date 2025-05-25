@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.LinkedList;
 
@@ -32,7 +33,7 @@ public class HospitalUQ {
                 "juan@mail.com",              // correo
                 "Calle 123",                   // dirección
                 "1234",                        // contraseña
-                "1993-05-10",                  // fecha de nacimiento
+                LocalDate.parse("2000-12-05"),                 // fecha de nacimiento
                 TipoSangre.O_POSITIVO          // RH
         );
         listaPacientes.add(pacientePrueba);
@@ -261,7 +262,7 @@ public class HospitalUQ {
     }
 
 
-    public boolean crearPaciente(Paciente newpaciente) {
+    public static boolean crearPaciente(Paciente newpaciente) {
         if (newpaciente == null) {
             return false;
         }

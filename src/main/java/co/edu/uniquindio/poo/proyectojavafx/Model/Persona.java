@@ -25,6 +25,10 @@ public abstract class Persona {
         this.contrasena = contrasena;
     }
 
+    public Persona() {
+
+    }
+
     public String getId() {
         return id;
     }
