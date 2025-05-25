@@ -14,11 +14,11 @@ public class Medico extends Persona {
     private List<Cita> citasAsignadas;
     private List<HistorialMedico> historialesPacientes;
 
-    public Medico(String id, Genero genero, String nombres, String apellidos, int edad,
+    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String NumeroDocumento,
                   String telefono, String correo, String direccion, String contrasena,
                   String NuLicencia, boolean certificado, List<Horario> horarios,
                   String ubicacion, Estado estado, Especialidad especialidad) {
-        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
+        super(id, genero, nombres, apellidos, edad, NumeroDocumento, telefono, correo, direccion, contrasena);
         this.NLicencia = NuLicencia;
         this.certificado = certificado;
         this.horarios = horarios;
@@ -68,11 +68,20 @@ public class Medico extends Persona {
         historialesPacientes.add(historial);
     }
 
-    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento) {
+    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento, Medico medico) {
         if (historialesPacientes.contains(historial)) {
-            historial.agregarEntrada(new EntradaHistorial(diagnostico, tratamiento, this, LocalDateTime.now()));
+            String id = UUID.randomUUID().toString(); // Genera un ID único para la entrada
+            EntradaHistorial nuevaEntrada = new EntradaHistorial(
+                    id,
+                    diagnostico,
+                    tratamiento,
+                    medico,
+                    LocalDateTime.now()
+            );
+            historial.agregarEntrada(nuevaEntrada);
         }
     }
+
 
     public String getNLicencia() {
         return NLicencia;

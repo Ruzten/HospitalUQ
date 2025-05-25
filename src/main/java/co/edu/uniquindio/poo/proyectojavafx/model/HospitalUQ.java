@@ -32,6 +32,7 @@ public class HospitalUQ {
                 "Juan",                        // nombres
                 "Pérez",                       // apellidos
                 30,                            // edad
+                "123123133",// Documento
                 "3111234567",                  // teléfono
                 "juan@mail.com",              // correo
                 "Calle 123",                   // dirección
@@ -51,6 +52,7 @@ public class HospitalUQ {
                 "Laura",                        // nombres
                 "Gómez",                        // apellidos
                 40,                             // edad
+                "1234567890",                   // Documento
                 "3107894561",                   // teléfono
                 "laura@hospitaluq.com",         // correo
                 "Carrera 45 #10-12",            // dirección
@@ -151,6 +153,9 @@ public class HospitalUQ {
         if (newMedico == null) {
             return false;
         }
+
+        String Id =  String.format("P%010d", listaPacientes.size() + 1);
+        newMedico.setId(Id);
 
         if (newMedico.getId() == null || newMedico.getId().trim().isEmpty()) {
             return false;
@@ -389,10 +394,10 @@ public class HospitalUQ {
             return false;
         }
 
-        // Validar que los datos obligatorios no sean null o vacíos
-        if (paciente.getNumeroDocumento() == null || paciente.getNumeroDocumento().trim().isEmpty() ||
-                paciente.getNombres() == null || paciente.getNombres().trim().isEmpty() ||
-                paciente.getApellidos() == null || paciente.getApellidos().trim().isEmpty()) {
+        String Id =  String.format("P%010d", listaPacientes.size() + 1);
+        paciente.setId(Id);
+
+        if(paciente.getId() == null || paciente.getId().trim().isEmpty()) {
             return false;
         }
 
