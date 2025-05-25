@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.proyectojavafx.Controller;
+package co.edu.uniquindio.poo.proyectojavafx.controller;
 
 import co.edu.uniquindio.poo.proyectojavafx.model.HistorialMedico;
 import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;

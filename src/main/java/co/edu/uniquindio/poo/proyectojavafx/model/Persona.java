@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public abstract class Persona {
     protected String id;
@@ -8,27 +9,21 @@ public abstract class Persona {
     private String nombres;
     private String apellidos;
     private int edad;
-    private String NumeroDocumento;
     private String telefono;
     private String correo;
     private String direccion;
     private String contrasena;
 
-    public Persona(String id, Genero genero, String nombres, String apellidos, int edad, String NumeroDocumento, String telefono, String correo, String direccion, String contrasena) {
+    public Persona(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena) {
         this.id = id;
         this.genero = genero;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.edad = edad;
-        this.NumeroDocumento = NumeroDocumento;
         this.telefono = telefono;
         this.correo = correo;
         this.direccion = direccion;
         this.contrasena = contrasena;
-    }
-
-    public Persona() {
-
     }
 
     public String getId() {
@@ -102,11 +97,4 @@ public abstract class Persona {
         this.contrasena = contrasena;
     }
 
-    public String getNumeroDocumento() {
-        return NumeroDocumento;
-    }
-
-    public void setNumeroDocumento(String numeroDocumento) {
-        NumeroDocumento = numeroDocumento;
-    }
 }

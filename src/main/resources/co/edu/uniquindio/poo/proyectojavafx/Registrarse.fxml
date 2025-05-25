@@ -101,16 +101,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <DatePicker fx:id="fechaNacimiento" layoutX="339.0" layoutY="453.0" prefHeight="30.0" prefWidth="298.0" promptText="Ingrese su fecha de nacimiento" style="-fx-background-color: 00619; -fx-background-radius: 100px;">
+      <DatePicker fx:id="fechaNacimiento" layoutX="339.0" layoutY="448.0" prefHeight="30.0" prefWidth="298.0" promptText="Ingrese su fecha de nacimiento" style="-fx-background-color: 00619; -fx-background-radius: 100px;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </DatePicker>
-      <Text fill="WHITE" layoutX="340.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id:" textAlignment="CENTER" wrappingWidth="28.13671875">
+      <TextField fx:id="id" layoutX="339.0" layoutY="512.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su cédula" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="339.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Documento de identidad:" textAlignment="CENTER" wrappingWidth="231.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="numeroDocumento" layoutX="335.0" layoutY="510.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su cédula" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
    </children>
 </AnchorPane>

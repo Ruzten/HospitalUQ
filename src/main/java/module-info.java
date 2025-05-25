@@ -14,4 +14,5 @@ module co.edu.uniquindio.poo.proyectojavafx {
     opens co.edu.uniquindio.poo.proyectojavafx to javafx.fxml;
     opens co.edu.uniquindio.poo.proyectojavafx.viewController to javafx.fxml;
     opens co.edu.uniquindio.poo.proyectojavafx.controller to javafx.fxml;
+
 }

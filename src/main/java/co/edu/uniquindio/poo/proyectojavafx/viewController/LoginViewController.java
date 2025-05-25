@@ -33,15 +33,14 @@ public class LoginViewController {
     private Text textoError;
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
-        String usuario = txtUsuario.getText();
+        String id = txtUsuario.getText();
         String clave = txtContrasena.getText();
 
-        Object usuarioValido = HospitalUQ.buscarUsuario(usuario, clave);
+        Object usuarioValido = HospitalUQ.buscarUsuario(id, clave);
 
 
         if (usuarioValido != null) {
 
-            // Redirigir según el tipo de usuario
             if (usuarioValido instanceof Paciente paciente) {
                 textoError.setVisible(true);
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml"));

@@ -46,7 +46,7 @@ public class RegistrarseViewController {
     @FXML
     private TextField numeroTelefonico;
     @FXML
-    private TextField numeroDocumento;
+    private TextField id;
     @FXML
     private TextField correo;
     @FXML
@@ -59,7 +59,7 @@ public class RegistrarseViewController {
     private DatePicker fechaNacimiento;
 
     public void registrarse () {
-        registrarseController.registrarseUsuario(genero.getValue(), nombres.getText(), apellidos.getText(), numeroTelefonico.getText(),numeroDocumento.getText(), correo.getText(), direccion.getText(), rh.getValue(), contrasena.getText(), fechaNacimiento.getValue());
+        registrarseController.registrarseUsuario(id.getText(), genero.getValue(), nombres.getText(), apellidos.getText(), numeroTelefonico.getText(), correo.getText(), direccion.getText(), rh.getValue(), contrasena.getText(), fechaNacimiento.getValue());
     }
 
 }

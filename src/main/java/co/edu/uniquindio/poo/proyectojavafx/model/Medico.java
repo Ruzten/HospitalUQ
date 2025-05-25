@@ -14,8 +14,8 @@ public class Medico extends Persona {
     private List<Cita> citasAsignadas;
     private List<HistorialMedico> historialesPacientes;
 
-    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String NumeroDocumento, String telefono, String correo, String direccion, String contrasena, String NLicencia, boolean certificado, List<Horario> horarios, String ubicacion, Estado estado, Especialidad especialidad, List<Cita> citasAsignadas, List<HistorialMedico> historialesPacientes) {
-        super(id, genero, nombres, apellidos, edad, NumeroDocumento, telefono, correo, direccion, contrasena);
+    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, String NLicencia, boolean certificado, List<Horario> horarios, String ubicacion, Estado estado, Especialidad especialidad, List<Cita> citasAsignadas, List<HistorialMedico> historialesPacientes) {
+        super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
         this.NLicencia = NLicencia;
         this.certificado = certificado;
         this.horarios = horarios;

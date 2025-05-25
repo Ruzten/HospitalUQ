@@ -15,6 +15,7 @@ public class HospitalUQ {
     private static LinkedList<Paciente> listaPacientes;
     private static LinkedList<Administrador> listaAdministradores;
     private LinkedList<HistorialMedico> listaDeHistorialesMedicos;
+    private static HospitalUQ instancia;
 
 
     public HospitalUQ(String nombre) {
@@ -23,6 +24,13 @@ public class HospitalUQ {
         this.listaPacientes = new LinkedList<>();
         this.listaAdministradores = new LinkedList<>();
         this.listaDeHistorialesMedicos = new LinkedList<>();
+    }
+
+    public static HospitalUQ getInstancia() {
+        if (instancia == null) {
+            instancia = new HospitalUQ("HospitalUQ");
+        }
+        return instancia;
     }
 
     // DATOS QUEMADOS PRUEBA LOGIN :D
@@ -34,17 +42,15 @@ public class HospitalUQ {
                 "Laura",                                    // nombres
                 "Martínez",                                 // apellidos
                 0,                                          // edad (se calculará después con calcularYAsignarEdad)
-                "102030405",                                // NumeroDocumento (asumo es String)
                 "3201234567",                               // telefono
                 "laura.martinez@mail.com",                  // correo
                 "Carrera 10 #5-20",                         // direccion
-                "passPaciente",                             // contrasena
-                // Convierte el String de fecha a un objeto LocalDate
+                "1234",                             // contrasena
                 LocalDate.parse("1990-03-05"),   // fechaNacimiento (LocalDate)
                 TipoSangre.A_NEGATIVO,                      // rh (asumo un enum TipoSangre)
                 historialPaciente                           // historialMedico (la lista que creaste arriba)
         );
-
+        listaPacientes.add(pacientePrueba);
         List<Horario> horariosPrueba = new LinkedList<>();
         horariosPrueba.add(new Horario(DayOfWeek.MONDAY, LocalTime.parse("08:00"), LocalTime.parse("12:00")  ));
 
@@ -56,13 +62,12 @@ public class HospitalUQ {
                 "medicoprueba",                           // id
                 Genero.MASCULINO,                   // genero
                 "Carlos",                           // nombres
-                "Andrade",                          // apellidos
+                "Sanchez",                          // apellidos
                 45,                                 // edad
-                "123456789",                        // NumeroDocumento (asumo que es String)
                 "3001234567",                       // telefono
                 "carlos.andrade@hospital.com",      // correo
                 "Av. Siempre Viva 742",             // direccion
-                "passMedico123",                    // contrasena
+                "1234",                    // contrasena
                 "MLIC-98765",                       // NLicencia
                 true,                               // certificado (true porque está certificado)
                 horariosMedico,                     // horarios (la lista que creaste arriba)
@@ -76,32 +81,31 @@ public class HospitalUQ {
         Administrador adminPrueba = new Administrador(
                 "admin",                           // id (por ejemplo, un ID único para administradores)
                 Genero.FEMENINO,                        // genero (puedes usar MASCULINO, FEMENINO u OTRO)
-                "Ana",                              // nombres
-                "García",                           // apellidos
-                35,                                 // edad
-                "987654321",                        // NumeroDocumento (asumo String)
-                "3009876543",                       // telefono
-                "ana.garcia@hospital.com",          // correo
-                "Cra. 45 #20-10",                   // direccion
-                "adminPass"                         // contrasena
+                "Ruben",                              // nombres
+                "Sanchez",                           // apellidos
+                17,                                 // edad
+                "3245870864",                       // telefono
+                "rubens.sancheze@uqvirtual.edu.co",          // correo
+                "Mi casa bro",                   // direccion
+                "admin"                         // contrasena
         );
         listaAdministradores.add(adminPrueba);
     }
 
     // METODO DE BUSCAR USUARIO PARA LOGIN
-    public static Object buscarUsuario(String usuario, String contrasena) {
+    public static Object buscarUsuario(String id, String contrasena) {
         for (Paciente paciente : HospitalUQ.listaPacientes) {
-            if (paciente.getId().equals(usuario) && paciente.getContrasena().equals(contrasena)) {
+            if (paciente.getId().equals(id) && paciente.getContrasena().equals(contrasena)) {
                 return paciente;
             }
         }
         for (Medico medico : listaMedicos) {
-            if (medico.getId().equals(usuario) && medico.getContrasena().equals(contrasena)) {
+            if (medico.getId().equals(id) && medico.getContrasena().equals(contrasena)) {
                 return medico;
             }
         }
         for (Administrador admin : listaAdministradores) {
-            if (admin.getId().equals(usuario) && admin.getContrasena().equals(contrasena)) {
+            if (admin.getId().equals(id) && admin.getContrasena().equals(contrasena)) {
                 return admin;
             }
         }
@@ -199,7 +203,6 @@ public class HospitalUQ {
                 medico.setNombres(newmedico.getNombres());
                 medico.setApellidos(newmedico.getApellidos());
                 medico.setEdad(newmedico.getEdad());
-                medico.setNumeroDocumento(newmedico.getNumeroDocumento());
                 medico.setTelefono(newmedico.getTelefono());
                 medico.setCorreo(newmedico.getCorreo());
                 medico.setDireccion(newmedico.getDireccion());
@@ -402,7 +405,7 @@ public class HospitalUQ {
         }
 
         // Validar que los datos obligatorios no sean null o vacíos
-        if (paciente.getNumeroDocumento() == null || paciente.getNumeroDocumento().trim().isEmpty() ||
+        if (paciente.getId() == null || paciente.getId().trim().isEmpty() ||
                 paciente.getNombres() == null || paciente.getNombres().trim().isEmpty() ||
                 paciente.getApellidos() == null || paciente.getApellidos().trim().isEmpty()) {
             return false;
@@ -410,7 +413,7 @@ public class HospitalUQ {
 
         // Verificar que no exista otro paciente con el mismo número de documento
         for (Paciente p : listaPacientes) {
-            if (p.getNumeroDocumento().equals(paciente.getNumeroDocumento())) {
+            if (p.getId().equals(paciente.getId())) {
                 return false;
             }
         }

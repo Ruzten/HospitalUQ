@@ -17,7 +17,7 @@ public class InterfazPacienteViewController {
     private Label mensajeBienvenida;
 
     public void inicializarPaciente(Paciente paciente) {
-        mensajeBienvenida.setText("¡Bienvenido, " + paciente.getNombres() + " " + paciente.getApellidos() + "!");
+        mensajeBienvenida.setText("¡Bienvenido, " + paciente.getNombres() + "!");
     }
 
     @FXML
