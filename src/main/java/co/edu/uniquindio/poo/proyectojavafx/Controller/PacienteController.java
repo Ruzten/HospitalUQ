@@ -7,13 +7,8 @@ import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
 import java.util.List;
 
 public class PacienteController {
-    private static Paciente paciente;
     private static HospitalUQ hospitalUQ;
-
-    public static void inicializar(Paciente pacienteParams, HospitalUQ hospitalUQParams) {
-        paciente = pacienteParams;
-        hospitalUQ = hospitalUQParams;
-    }
+    private static Paciente paciente;
 
     public static boolean registrarPaciente(){
         return hospitalUQ.crearPaciente(paciente);

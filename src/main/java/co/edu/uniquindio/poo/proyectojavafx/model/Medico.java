@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Medico extends Persona {
@@ -9,8 +11,13 @@ public class Medico extends Persona {
     private String ubicacion;
     private Estado estado;
     private Especialidad especialidad;
+    private List<Cita> citasAsignadas;
+    private List<HistorialMedico> historialesPacientes;
 
-    public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, String NuLicencia, boolean certificado, List<Horario> horarios, String ubicacion, Estado estado, Especialidad especialidad) {
+    public Medico(String id, Genero genero, String nombres, String apellidos, int edad,
+                  String telefono, String correo, String direccion, String contrasena,
+                  String NuLicencia, boolean certificado, List<Horario> horarios,
+                  String ubicacion, Estado estado, Especialidad especialidad) {
         super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
         this.NLicencia = NuLicencia;
         this.certificado = certificado;
@@ -18,6 +25,53 @@ public class Medico extends Persona {
         this.ubicacion = ubicacion;
         this.estado = estado;
         this.especialidad = especialidad;
+        this.citasAsignadas = new ArrayList<>();
+        this.historialesPacientes = new ArrayList<>();
+    }
+
+
+    public List<Cita> getCitasAsignadas() {
+        return citasAsignadas;
+    }
+
+    public List<HistorialMedico> getHistorialesPacientes() {
+        return historialesPacientes;
+    }
+
+    // Métodos para gestión de horarios
+    public void agregarHorario(Horario horario) {
+        if (!horarios.contains(horario)) {
+            horarios.add(horario);
+        }
+    }
+
+    public void eliminarHorario(Horario horario) {
+        horarios.remove(horario);
+    }
+
+    // Métodos para gestión de citas
+    public void agregarCita(Cita cita) {
+        citasAsignadas.add(cita);
+    }
+
+    public void cancelarCita(Cita cita) {
+        citasAsignadas.remove(cita);
+    }
+
+    public boolean tieneDisponibilidad(Horario horario) {
+        return horarios.stream()
+                .anyMatch(h -> !h.estaOcupado() && h.coincideCon(horario));
+    }
+
+    // Métodos para gestión de historiales médicos
+    public void agregarHistorialPaciente(HistorialMedico historial) {
+        historialesPacientes.add(historial);
+    }
+
+    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento) {
+        if (historialesPacientes.contains(historial)) {
+            historial.agregarEntrada(new EntradaHistorial(diagnostico, tratamiento, this, LocalDateTime.now()));
+        }
     }
 
     public String getNLicencia() {
@@ -29,6 +83,10 @@ public class Medico extends Persona {
     }
 
     public boolean getCertificado() {
+        return certificado;
+    }
+
+    public boolean isCertificado() {
         return certificado;
     }
 
@@ -67,5 +125,14 @@ public class Medico extends Persona {
     public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
+
+    public void setCitasAsignadas(List<Cita> citasAsignadas) {
+        this.citasAsignadas = citasAsignadas;
+    }
+
+    public void setHistorialesPacientes(List<HistorialMedico> historialesPacientes) {
+        this.historialesPacientes = historialesPacientes;
+    }
+
 
 }

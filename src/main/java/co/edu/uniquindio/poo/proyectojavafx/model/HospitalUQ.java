@@ -1,7 +1,11 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
-import java.util.List;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.LinkedList;
+import java.util.List;
 
 public class HospitalUQ {
     private String nombre;
@@ -21,7 +25,7 @@ public class HospitalUQ {
     }
 
     // DATOS QUEMADOS PRUEBA LOGIN :D
-    public void iniciarDatosQuemados () {
+    public void iniciarDatosQuemados() {
         Paciente pacientePrueba = new Paciente(
                 "pacienteprueba",                         // id
                 Genero.MASCULINO,              // género
@@ -38,7 +42,8 @@ public class HospitalUQ {
         listaPacientes.add(pacientePrueba);
 
         List<Horario> horariosPrueba = new LinkedList<>();
-        horariosPrueba.add(new Horario("Lunes", "08:00", "12:00"));
+        horariosPrueba.add(new Horario(DayOfWeek.MONDAY, LocalTime.parse("08:00"), LocalTime.parse("12:00")  ));
+
 
         Medico medicoPrueba = new Medico(
                 "docprueba",                          // id
@@ -163,7 +168,6 @@ public class HospitalUQ {
     }
 
 
-
     public boolean eliminarMedico(String id) {
         boolean flag = false;
         for (Medico medico : listaMedicos) {
@@ -183,6 +187,7 @@ public class HospitalUQ {
                 medico.setNombres(newmedico.getNombres());
                 medico.setApellidos(newmedico.getApellidos());
                 medico.setEdad(newmedico.getEdad());
+                medico.setNumeroDocumento(newmedico.getNumeroDocumento());
                 medico.setTelefono(newmedico.getTelefono());
                 medico.setCorreo(newmedico.getCorreo());
                 medico.setDireccion(newmedico.getDireccion());
@@ -191,13 +196,121 @@ public class HospitalUQ {
                 medico.setUbicacion(newmedico.getUbicacion());
                 medico.setEstado(newmedico.getEstado());
                 medico.setEspecialidad(newmedico.getEspecialidad());
-                medico.setHorarios(newmedico.getHorarios());
+
+                // Validar los horarios antes de actualizarlos
+                List<Horario> nuevosHorarios = newmedico.getHorarios();
+                if (nuevosHorarios != null) {
+                    // Verificar superposiciones de horarios
+                    for (int i = 0; i < nuevosHorarios.size(); i++) {
+                        for (int j = i + 1; j < nuevosHorarios.size(); j++) {
+                            if (nuevosHorarios.get(i).coincideCon(nuevosHorarios.get(j))) {
+                                throw new IllegalArgumentException("Hay horarios superposicionados");
+                            }
+                        }
+                    }
+                    medico.setHorarios(nuevosHorarios);
+                }
+
                 medico.setCertificado(newmedico.getCertificado());
                 return medico;
             }
         }
         return null;
     }
+
+    public Paciente buscarPaciente(String id) {
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(id)) {
+                return paciente;
+            }
+        }
+        return null;
+    }
+
+
+
+    public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico) {
+        // Verificar que los parámetros no sean nulos
+        if (idPaciente == null || historialMedico == null) {
+            return false;
+        }
+
+        // Buscar el paciente con el ID proporcionado
+        Paciente paciente = null;
+        for (Paciente p : listaPacientes) {
+            if (p.getId().equals(idPaciente)) {
+                paciente = p;
+                break;
+            }
+        }
+
+        // Si no se encuentra el paciente, retornar false
+        if (paciente == null) {
+            return false;
+        }
+
+        // Agregar el historial médico a la lista
+        try {
+            listaDeHistorialesMedicos.add(historialMedico);
+            paciente.setHistorialMedico((List<HistorialMedico>) historialMedico);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+
+    }
+
+    public boolean actualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico) {
+        if (idPaciente == null || historialMedico == null) {
+            return false;
+        }
+
+        // Buscar y actualizar el historial médico
+        for (int i = 0; i < listaDeHistorialesMedicos.size(); i++) {
+            if (listaDeHistorialesMedicos.get(i).getId().equals(idPaciente)) {
+                listaDeHistorialesMedicos.set(i, historialMedico);
+
+                // Actualizar el historial en el paciente correspondiente
+                for (Paciente paciente : listaPacientes) {
+                    if (paciente.getId().equals(idPaciente)) {
+                        List<HistorialMedico> historialesActuales = paciente.getHistorialMedico();
+                        if (historialesActuales == null) {
+                            historialesActuales = new LinkedList<>();
+                        }
+                        historialesActuales.add(historialMedico);
+                        paciente.setHistorialMedico(historialesActuales);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+
+
+    public LinkedList<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente) {
+        if (idPaciente == null) {
+            // Retorna lista vacía si el ID es nulo
+            return new LinkedList<>();
+        }
+
+        LinkedList<HistorialMedico> historialesPaciente = new LinkedList<>();
+        for (HistorialMedico historial : listaDeHistorialesMedicos) {
+            if (historial.getId().equals(idPaciente)) {
+                historialesPaciente.add(historial);
+            }
+        }
+        return historialesPaciente;
+    }
+
+
+    public List<Paciente> obtenerPacientes() {
+        return new LinkedList<>(listaPacientes) ;
+    }
+
 
     public Medico buscarMedico(String id) {
         for (Medico medico : listaMedicos) {
@@ -208,36 +321,55 @@ public class HospitalUQ {
         return null;
     }
 
-    public Paciente actualizarPaciente(Paciente actuPaciente) {
-        if(actuPaciente == null || actuPaciente.getId() == null){
+    public Paciente actualizarPaciente(Paciente paciente) {
+        if (paciente == null || paciente.getId() == null) {
             return null;
         }
 
-        for (Paciente paciente : listaPacientes) {
-            if (paciente.getId().equals(actuPaciente.getId())) {
-                try {
-                    paciente.setGenero(actuPaciente.getGenero());
-                    paciente.setNombres(actuPaciente.getNombres());
-                    paciente.setApellidos(actuPaciente.getApellidos());
-                    paciente.setEdad(actuPaciente.getEdad());
-                    paciente.setTelefono(actuPaciente.getTelefono());
-                    paciente.setCorreo(actuPaciente.getCorreo());
-                    paciente.setDireccion(actuPaciente.getDireccion());
-                    paciente.setContrasena(actuPaciente.getContrasena());
-                    paciente.setFechaNacimiento(actuPaciente.getFechaNacimiento());
-                    paciente.setRh(actuPaciente.getRh());
-                    paciente.setHistorialMedico(actuPaciente.getHistorialMedico());
-
-                    return paciente;
-                }catch (Exception e) {
-                    throw e;
-                }
+        //Buscar el paciente y actualizar los datos
+        for (int i = 0; i < listaPacientes.size(); i++) {
+            if (listaPacientes.get(i).getId().equals(paciente.getId())) {
+                listaPacientes.set(i, paciente);
+                return paciente;
             }
+        }
+
+        // Si el paciente no existe, lo agregamos a la lista
+        listaPacientes.add(paciente);
+        return paciente;
+    }
+    public Paciente actualizarPaciente(String numeroDocumento, String nombre, String apellidos,
+                                       LocalDate fechaNacimiento, String telefono, String email) {
+        if (numeroDocumento == null) {
             return null;
+        }
+
+        // Buscar el paciente por número de documento
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(numeroDocumento)) {
+                // Actualizar solo los campos que no son null
+                if (nombre != null) {
+                    paciente.setNombres(nombre);
+                }
+                if (apellidos != null) {
+                    paciente.setApellidos(apellidos);
+                }
+                if (fechaNacimiento != null) {
+                    paciente.setFechaNacimiento(String.valueOf(fechaNacimiento));
+                }
+                if (telefono != null) {
+                    paciente.setTelefono(telefono);
+                }
+                if (email != null) {
+                    paciente.setCorreo(email);
+                }
+                return paciente;
+            }
         }
 
         return null;
     }
+
 
     public boolean eliminarPaciente(String id) {
         boolean flag = false;
@@ -251,78 +383,33 @@ public class HospitalUQ {
         return flag;
     }
 
-    public Paciente buscarPaciente(String id) {
-        for (Paciente paciente : listaPacientes) {
-            if (paciente.getId().equals(id)) {
-                return paciente;
-            }
-        }
-        return null;
-    }
-
-
-    public boolean crearPaciente(Paciente newpaciente) {
-        if (newpaciente == null) {
+    public boolean crearPaciente(Paciente paciente) {
+        // Validar que el paciente no sea null
+        if (paciente == null) {
             return false;
         }
 
-        String Id = String.format("P%010d", listaPacientes.size() + 1);
-        newpaciente.setId(Id);
-
-        if (newpaciente.getId() == null || newpaciente.getId().trim().isEmpty()) {
+        // Validar que los datos obligatorios no sean null o vacíos
+        if (paciente.getNumeroDocumento() == null || paciente.getNumeroDocumento().trim().isEmpty() ||
+                paciente.getNombres() == null || paciente.getNombres().trim().isEmpty() ||
+                paciente.getApellidos() == null || paciente.getApellidos().trim().isEmpty()) {
             return false;
         }
 
-        // Verificar que no hay duplicados
-        for (Paciente paciente : listaPacientes) {
-            if (paciente.getId().equals(newpaciente.getId())) {
+        // Verificar que no exista otro paciente con el mismo número de documento
+        for (Paciente p : listaPacientes) {
+            if (p.getNumeroDocumento().equals(paciente.getNumeroDocumento())) {
                 return false;
             }
         }
 
-        listaPacientes.add(newpaciente);
-        return true;
+        // Inicializar la lista de historiales médicos si es null
+        if (paciente.getHistorialMedico() == null) {
+            paciente.setHistorialMedico(new LinkedList<>());
+        }
+
+        // Agregar el paciente a la lista
+        return listaPacientes.add(paciente);
     }
 
-    public boolean ActualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
-        Paciente paciente = buscarPaciente(idPaciente);
-        if(paciente != null){
-            List<HistorialMedico> historialMedicos = paciente.getHistorialMedico();
-            for(int i = 0; i < historialMedicos.size(); i++){
-                if(historialMedicos.get(i).getFecha().equals(historialMedico.getFecha())){
-                    historialMedicos.get(i).setDiagnostico(historialMedico.getDiagnostico());
-                    historialMedicos.get(i).setTratamiento(historialMedico.getTratamiento());
-                    historialMedicos.get(i).setObservaciones(historialMedico.getObservaciones());
-                    return true;
-                }
-            }
-        }
-        return  false;
-    }
-
-    public List<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente){
-        Paciente paciente = buscarPaciente(idPaciente);
-        if(paciente != null){
-            return paciente.getHistorialMedico();
-        }
-        return null;
-    }
-
-    public List<Paciente> obtenerPacientes(){
-        List<Paciente> newlistPacientes = new LinkedList<>();
-        for(Paciente paciente : this.listaPacientes){
-            newlistPacientes.add(paciente);
-        }
-        return listaPacientes;
-    }
-
-    public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
-        Paciente paciente = buscarPaciente(idPaciente);
-        if(paciente != null){
-            HistorialMedico nuevoHistorialMedico = new HistorialMedico(historialMedico.getFecha(), historialMedico.getDiagnostico(), historialMedico.getTratamiento(), historialMedico.getObservaciones(), historialMedico.getMedicoTratante());
-            paciente.getHistorialMedico().add(nuevoHistorialMedico);
-            return true;
-        }
-        return false;
-    }
 }

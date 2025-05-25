@@ -11,10 +11,6 @@ public class MedicoController {
     private static Medico medico;
     private static HospitalUQ hospitalUQ;
 
-    public MedicoController(HospitalUQ hospitalUQParams, Medico medicoActual) {
-        hospitalUQ = hospitalUQParams;
-        medico = medicoActual;
-    }
 
    public static Paciente buscarPaciente(String id){
        return hospitalUQ.buscarPaciente(id);
@@ -25,7 +21,7 @@ public class MedicoController {
    }
 
    public static boolean actualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
-       return hospitalUQ.ActualizarHistorialMedico(idPaciente, historialMedico);
+       return hospitalUQ.actualizarHistorialMedico(idPaciente, historialMedico);
    }
 
    public static List<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente){

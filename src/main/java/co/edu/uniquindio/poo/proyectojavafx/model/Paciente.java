@@ -24,7 +24,6 @@ public class Paciente extends Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    // ... (continuar con los demás getters y setters)
 
     public void agregarHistorialMedico(HistorialMedico historial) {
         this.historialMedico.add(historial);

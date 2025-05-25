@@ -1,60 +1,64 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HistorialMedico {
+    private String id;
+    private Paciente paciente;
+    private List<EntradaHistorial> entradas;
+    private String grupoSanguineo;
+    private List<String> alergias;
+    private List<String> antecedentes;
+    private LocalDate fechaCreacion;
 
-    private LocalDate fecha;
-    private String diagnostico;
-    private String tratamiento;
-    private String observaciones;
-    private Medico medicoTratante;
-
-    public HistorialMedico(LocalDate fecha, String diagnostico, String tratamiento, String observaciones, Medico medicoTratante) {
-        this.fecha = fecha;
-        this.diagnostico = diagnostico;
-        this.tratamiento = tratamiento;
-        this.observaciones = observaciones;
-        this.medicoTratante = medicoTratante;
+    public HistorialMedico(String id, Paciente paciente, String grupoSanguineo) {
+        this.id = id;
+        this.paciente = paciente;
+        this.grupoSanguineo = grupoSanguineo;
+        this.entradas = new ArrayList<>();
+        this.alergias = new ArrayList<>();
+        this.antecedentes = new ArrayList<>();
+        this.fechaCreacion = LocalDate.now();
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    // Getters y Setters básicos
+    public String getId() {
+        return id;
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public String getDiagnostico() {
-        return diagnostico;
+    public List<EntradaHistorial> getEntradas() {
+        return entradas;
     }
 
-    public void setDiagnostico(String diagnostico) {
-        this.diagnostico = diagnostico;
+    public String getGrupoSanguineo() {
+        return grupoSanguineo;
     }
 
-    public String getTratamiento() {
-        return tratamiento;
+    public List<String> getAlergias() {
+        return alergias;
     }
 
-    public void setTratamiento(String tratamiento) {
-        this.tratamiento = tratamiento;
+    public List<String> getAntecedentes() {
+        return antecedentes;
     }
 
-    public String getObservaciones() {
-        return observaciones;
+    public LocalDate getFechaCreacion() {
+        return fechaCreacion;
     }
 
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
+    // Métodos para gestionar entradas
+    public void agregarEntrada(EntradaHistorial entrada) {
+        entradas.add(entrada);
     }
 
-    public Medico getMedicoTratante() {
-        return medicoTratante;
+    public void eliminarEntrada(EntradaHistorial entrada) {
+        entradas.remove(entrada);
     }
 
-    public void setMedicoTratante(Medico medicoTratante) {
-        this.medicoTratante = medicoTratante;
-    }
 }
