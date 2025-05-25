@@ -24,6 +24,9 @@ public class EntradaHistorial {
         this.notasAdicionales = "";
     }
 
+    public EntradaHistorial(String diagnostico, String tratamiento, Medico medico, LocalDateTime now) {
+    }
+
     // Getters y Setters
     public String getId() {
         return id;

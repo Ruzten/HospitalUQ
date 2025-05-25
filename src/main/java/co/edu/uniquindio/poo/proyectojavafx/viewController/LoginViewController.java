@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.control.TextField;
@@ -29,15 +30,19 @@ public class LoginViewController {
     @FXML
     private PasswordField txtContrasena;
     @FXML
+    private Text textoError;
+    @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
-        String usuario = txtUsuario.getText();
+        String id = txtUsuario.getText();
         String clave = txtContrasena.getText();
 
-        Object usuarioValido = HospitalUQ.buscarUsuario(usuario, clave);
+        Object usuarioValido = HospitalUQ.buscarUsuario(id, clave);
+
 
         if (usuarioValido != null) {
-            // Redirigir según el tipo de usuario
+
             if (usuarioValido instanceof Paciente paciente) {
+                textoError.setVisible(true);
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml"));
                 Parent root = fxmlLoader.load();
 
@@ -49,6 +54,7 @@ public class LoginViewController {
                 stage.show();
 
             } else if (usuarioValido instanceof Medico medico) {
+                textoError.setVisible(true);
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml"));
                 Parent root = fxmlLoader.load();
 
@@ -59,6 +65,7 @@ public class LoginViewController {
                 stage.setScene(new Scene(root));
                 stage.show();
             } else if (usuarioValido instanceof Administrador admin) {
+                textoError.setVisible(true);
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml"));
                 Parent root = fxmlLoader.load();
 
@@ -66,9 +73,10 @@ public class LoginViewController {
                 stage.setScene(new Scene(root));
                 stage.show();
             }
-        } else {
-            // Mostrar Error (proximamente)
-            System.out.println("Usuario o contraseña incorrectos");
+        }
+        else {
+            textoError.setVisible(true);
+            textoError.setText("Usuario o contraseña incorrectos");
         }
     }
 

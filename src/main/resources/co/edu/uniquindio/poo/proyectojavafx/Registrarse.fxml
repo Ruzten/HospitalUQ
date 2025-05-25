@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.LoginViewController">
+<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.RegistrarseViewController">
    <children>
-      <ImageView fitHeight="800.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="800.0" fitWidth="1400.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Images/FondoRegistrarse.png" />
          </image>
@@ -28,7 +28,7 @@
             <Font name="Open Sans SemiBold" size="52.0" />
          </font>
       </Text>
-      <Button layoutX="1159.0" layoutY="40.0" mnemonicParsing="false" onAction="#VolverInicio" prefHeight="46.0" prefWidth="197.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Salir" textFill="WHITE">
+      <Button layoutX="1159.0" layoutY="40.0" mnemonicParsing="false" onAction="#volverInicio" prefHeight="46.0" prefWidth="197.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Salir" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -40,30 +40,24 @@
             <Font name="Lato Bold" size="17.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="337.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula:" textAlignment="CENTER" wrappingWidth="67.13671875">
+      <Text fill="WHITE" layoutX="335.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genero:" textAlignment="CENTER" wrappingWidth="78.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="337.0" layoutY="214.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su cedula" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="333.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genero:" textAlignment="CENTER" wrappingWidth="78.13671875">
+      <Text fill="WHITE" layoutX="339.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres:" textAlignment="CENTER" wrappingWidth="87.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="337.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres:" textAlignment="CENTER" wrappingWidth="87.13671875">
+      <TextField fx:id="nombres" layoutX="339.0" layoutY="297.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese sus nombres" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="337.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos:" textAlignment="CENTER" wrappingWidth="94.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="337.0" layoutY="367.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese sus nombres" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="335.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos:" textAlignment="CENTER" wrappingWidth="94.13671875">
-         <font>
-            <Font name="Lato Bold" size="20.0" />
-         </font>
-      </Text>
-      <TextField layoutX="337.0" layoutY="444.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese sus apellidos" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="337.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de Nacimiento" textAlignment="CENTER" wrappingWidth="190.13671875">
+      <TextField fx:id="apellidos" layoutX="339.0" layoutY="374.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese sus apellidos" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="339.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de Nacimiento" textAlignment="CENTER" wrappingWidth="190.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
@@ -73,41 +67,50 @@
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="821.0" layoutY="213.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su número telefonico" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <TextField fx:id="numeroTelefonico" layoutX="821.0" layoutY="213.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su número telefonico" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="821.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo:" textAlignment="CENTER" wrappingWidth="67.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="821.0" layoutY="289.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion de correo" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <TextField fx:id="correo" layoutX="821.0" layoutY="289.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion de correo" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="821.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección:" textAlignment="CENTER" wrappingWidth="87.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="821.0" layoutY="366.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion (vivienda)" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="819.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" textAlignment="CENTER" wrappingWidth="110.13671875">
+      <TextField fx:id="direccion" layoutX="821.0" layoutY="366.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su direccion (vivienda)" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="821.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" textAlignment="CENTER" wrappingWidth="110.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="821.0" layoutY="443.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su nueva contraseña" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="817.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de sangre:" textAlignment="CENTER" wrappingWidth="147.13671875">
+      <TextField fx:id="contrasena" layoutX="821.0" layoutY="512.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su nueva contraseña" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="818.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de sangre:" textAlignment="CENTER" wrappingWidth="147.13671875">
          <font>
             <Font name="Lato Bold" size="20.0" />
          </font>
       </Text>
-      <ChoiceBox accessibleRole="CHECK_BOX" layoutX="337.0" layoutY="293.0" prefHeight="30.0" prefWidth="298.0" style="-fx-background-radius: 100px; -fx-background-color: #00619d;" />
-      <ChoiceBox accessibleRole="CHECK_BOX" layoutX="821.0" layoutY="523.0" prefHeight="30.0" prefWidth="298.0" style="-fx-background-radius: 100px; -fx-background-color: #00619d;" />
-      <Button layoutX="546.0" layoutY="633.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="360.0" style="-fx-background-radius: 100px; -fx-background-color: #132540;" text="Continuar" textFill="WHITE">
+      <ChoiceBox fx:id="genero" accessibleRole="CHECK_BOX" layoutX="339.0" layoutY="223.0" prefHeight="30.0" prefWidth="298.0" style="-fx-background-radius: 100px; -fx-background-color: #00619d;" />
+      <ChoiceBox fx:id="rh" accessibleRole="CHECK_BOX" layoutX="822.0" layoutY="446.0" prefHeight="30.0" prefWidth="298.0" style="-fx-background-radius: 100px; -fx-background-color: #00619d;" />
+      <Button layoutX="546.0" layoutY="633.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="65.0" prefWidth="360.0" style="-fx-background-radius: 100px; -fx-background-color: #132540;" text="Continuar" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="30.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <DatePicker layoutX="337.0" layoutY="523.0" prefHeight="30.0" prefWidth="298.0" promptText="Ingrese su fecha de nacimiento" style="-fx-background-color: 00619d; -fx-background-radius: 100px;">
+      <DatePicker fx:id="fechaNacimiento" layoutX="339.0" layoutY="448.0" prefHeight="30.0" prefWidth="298.0" promptText="Ingrese su fecha de nacimiento" style="-fx-background-color: 00619; -fx-background-radius: 100px;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </DatePicker>
+      <TextField fx:id="id" layoutX="339.0" layoutY="512.0" prefHeight="34.0" prefWidth="298.0" promptText="Ingrese su cédula" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="339.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Documento de identidad:" textAlignment="CENTER" wrappingWidth="231.13671875">
+         <font>
+            <Font name="Lato Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -1,7 +1,5 @@
 package co.edu.uniquindio.poo.proyectojavafx;
-import co.edu.uniquindio.poo.proyectojavafx.model.Genero;
 import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
-import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,13 +10,13 @@ import javafx.scene.image.Image;
 public class HospitalUQAPP extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("InicioApp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("InicioAPP.fxml"));
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Images/HospitalUQLOGO.png")));
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setWidth(1400);
-        primaryStage.setHeight(800);
+        primaryStage.setHeight(820);
         primaryStage.setResizable(false);
         primaryStage.centerOnScreen();
 
