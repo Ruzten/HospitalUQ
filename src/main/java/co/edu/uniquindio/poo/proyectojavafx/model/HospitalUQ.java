@@ -14,6 +14,7 @@ public class HospitalUQ {
     private static LinkedList<Paciente> listaPacientes;
     private static LinkedList<Administrador> listaAdministradores;
     private LinkedList<HistorialMedico> listaDeHistorialesMedicos;
+    private static HospitalUQ instancia;
 
 
     public HospitalUQ(String nombre) {
@@ -22,6 +23,13 @@ public class HospitalUQ {
         this.listaPacientes = new LinkedList<>();
         this.listaAdministradores = new LinkedList<>();
         this.listaDeHistorialesMedicos = new LinkedList<>();
+    }
+
+    public static HospitalUQ getInstancia() {
+        if (instancia == null) {
+            instancia = new HospitalUQ("Hospital UQ");
+        }
+        return instancia;
     }
 
     // DATOS QUEMADOS PRUEBA LOGIN :D
@@ -37,8 +45,8 @@ public class HospitalUQ {
                 "Calle 123",                   // dirección
                 "1234",                        // contraseña
                 "1993-05-10",                  // fecha de nacimiento
-                TipoSangre.O_POSITIVO          // RH
-        );
+                TipoSangre.O_POSITIVO,          // RH
+                historialMedicoVacio);
         listaPacientes.add(pacientePrueba);
 
         List<Horario> horariosPrueba = new LinkedList<>();
@@ -78,19 +86,19 @@ public class HospitalUQ {
     }
 
     // METODO DE BUSCAR USUARIO PARA LOGIN
-    public static Object buscarUsuario(String usuario, String contrasena) {
+    public static Object buscarUsuario(String id, String contrasena) {
         for (Paciente paciente : HospitalUQ.listaPacientes) {
-            if (paciente.getId().equals(usuario) && paciente.getContrasena().equals(contrasena)) {
+            if (paciente.getId().equals(id) && paciente.getContrasena().equals(contrasena)) {
                 return paciente;
             }
         }
         for (Medico medico : listaMedicos) {
-            if (medico.getId().equals(usuario) && medico.getContrasena().equals(contrasena)) {
+            if (medico.getId().equals(id) && medico.getContrasena().equals(contrasena)) {
                 return medico;
             }
         }
         for (Administrador admin : listaAdministradores) {
-            if (admin.getId().equals(usuario) && admin.getContrasena().equals(contrasena)) {
+            if (admin.getId().equals(id) && admin.getContrasena().equals(contrasena)) {
                 return admin;
             }
         }
@@ -151,9 +159,6 @@ public class HospitalUQ {
         if (newMedico == null) {
             return false;
         }
-
-        String Id =  String.format("P%010d", listaPacientes.size() + 1);
-        newMedico.setId(Id);
 
         if (newMedico.getId() == null || newMedico.getId().trim().isEmpty()) {
             return false;
@@ -357,7 +362,7 @@ public class HospitalUQ {
                     paciente.setApellidos(apellidos);
                 }
                 if (fechaNacimiento != null) {
-                    paciente.setFechaNacimiento(String.valueOf(fechaNacimiento));
+                    paciente.setFechaNacimiento(fechaNacimiento);
                 }
                 if (telefono != null) {
                     paciente.setTelefono(telefono);
@@ -391,10 +396,10 @@ public class HospitalUQ {
             return false;
         }
 
-        String Id =  String.format("P%010d", listaPacientes.size() + 1);
-        paciente.setId(Id);
-
-        if(paciente.getId() == null || paciente.getId().trim().isEmpty()) {
+        // Validar que los datos obligatorios no sean null o vacíos
+        if (paciente.getId() == null || paciente.getId().trim().isEmpty() ||
+                paciente.getNombres() == null || paciente.getNombres().trim().isEmpty() ||
+                paciente.getApellidos() == null || paciente.getApellidos().trim().isEmpty()) {
             return false;
         }
 

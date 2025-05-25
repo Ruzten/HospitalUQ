@@ -41,7 +41,7 @@
             <Font size="28.0" />
          </font>
       </Text>
-      <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="491.0" layoutY="354.0" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su contraseña" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
+      <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="491.0" layoutY="354.0" onAction="#iniciarSesion" prefHeight="40.0" prefWidth="469.0" promptText="Ingrese su contraseña" style="-fx-background-radius: 100px; -fx-background-color: #00619d;">
          <font>
             <Font size="15.0" />
          </font></PasswordField>

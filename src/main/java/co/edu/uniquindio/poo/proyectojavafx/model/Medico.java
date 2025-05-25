@@ -30,7 +30,6 @@ public class Medico extends Persona {
         this.historialesPacientes = new ArrayList<>();
     }
 
-
     public List<Cita> getCitasAsignadas() {
         return citasAsignadas;
     }
