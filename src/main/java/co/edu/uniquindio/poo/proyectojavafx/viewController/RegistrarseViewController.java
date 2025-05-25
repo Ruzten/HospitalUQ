@@ -59,7 +59,8 @@ public class RegistrarseViewController {
     private DatePicker fechaNacimiento;
 
     public void registrarse () {
-        registrarseController.registrarseUsuario(id.getText(), genero.getValue(), nombres.getText(), apellidos.getText(), numeroTelefonico.getText(), correo.getText(), direccion.getText(), rh.getValue(), contrasena.getText(), fechaNacimiento.getValue());
+        registrarseController.registrarseUsuario(id.getText(), genero.getValue(), nombres.getText(), apellidos.getText(), numeroTelefonico.getText(), correo.getText(), direccion.getText(), rh.getValue(), contrasena.getText(), fechaNacimiento.getValue())
+        ;
     }
 
 }

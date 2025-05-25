@@ -37,7 +37,7 @@ public class HospitalUQ {
     public void iniciarDatosQuemados() {
         List<HistorialMedico> historialPaciente = new ArrayList<>();
         Paciente pacientePrueba = new Paciente(
-                "pacientePrueba",                                   // id
+                "pacienteprueba",                                   // id
                 Genero.FEMENINO,                            // genero
                 "Laura",                                    // nombres
                 "Martínez",                                 // apellidos

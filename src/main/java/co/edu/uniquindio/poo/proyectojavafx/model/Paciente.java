@@ -50,6 +50,7 @@ public class Paciente extends Persona {
             int edadCalculada = Period.between(fechaNacimiento, LocalDate.now()).getYears();
             setEdad(edadCalculada);
         }
+        System.out.println("Prueba");
     }
 
 }

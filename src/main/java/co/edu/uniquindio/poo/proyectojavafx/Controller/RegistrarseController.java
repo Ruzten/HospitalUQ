@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.proyectojavafx.controller;
 
 import co.edu.uniquindio.poo.proyectojavafx.model.*;
+import co.edu.uniquindio.poo.proyectojavafx.viewController.RegistrarseViewController;
 import javafx.scene.control.Alert;
 
 import java.time.LocalDate;
@@ -54,10 +55,7 @@ public class RegistrarseController {
         nuevoPaciente.calcularYAsignarEdad();
         boolean exito = hospitalUQ.crearPaciente(nuevoPaciente);
         if (exito) {
-            mostrarAlerta("¡Registro exitoso!");
-            System.out.println(hospitalUQ.getListaPacientes());
-            System.out.println(nuevoPaciente.getId());
-            System.out.println(nuevoPaciente.toString());
+            mostrarAlerta("¡Registro exitoso!" + "\nRecuerde que su usuario sera su número de documento (ID) :)");
         } else {
             mostrarAlerta("No se pudo registrar. Verifica los datos.");
         }
