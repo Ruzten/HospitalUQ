@@ -2,27 +2,24 @@ package co.edu.uniquindio.poo.proyectojavafx.viewController;
 import co.edu.uniquindio.poo.proyectojavafx.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 
 public class LoginViewController {
     @FXML
-    public void VolverInicio(ActionEvent event) throws IOException {
-        Navegacion.volver();
-    }
-    @FXML
     private TextField txtUsuario;
     @FXML
     private PasswordField txtContrasena;
     @FXML
     private Text textoError;
+
+    @FXML
+    public void VolverInicio(ActionEvent event) throws IOException {
+        Navegacion.volver();
+    }
+
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
         String id = txtUsuario.getText();
@@ -30,22 +27,21 @@ public class LoginViewController {
 
         Object usuarioValido = HospitalUQ.buscarUsuario(id, clave);
 
-
         if (usuarioValido != null) {
 
             if (usuarioValido instanceof Paciente paciente) {
-                textoError.setVisible(true);
-                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml");
+                textoError.setVisible(false);
                 Sesion.setUsuarioActual(paciente);
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml");
 
             } else if (usuarioValido instanceof Medico medico) {
-                textoError.setVisible(true);
-                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml");
+                textoError.setVisible(false);
                 Sesion.setUsuarioActual(medico);
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml");
             } else if (usuarioValido instanceof Administrador admin) {
-                textoError.setVisible(true);
-                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml");
+                textoError.setVisible(false);
                 Sesion.setUsuarioActual(admin);
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml");
             }
         }
         else {
@@ -53,5 +49,4 @@ public class LoginViewController {
             textoError.setText("Usuario o contraseña incorrectos");
         }
     }
-
 }

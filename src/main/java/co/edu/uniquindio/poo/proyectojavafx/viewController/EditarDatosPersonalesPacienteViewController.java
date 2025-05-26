@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.viewController;
 
+import co.edu.uniquindio.poo.proyectojavafx.model.Navegacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +11,7 @@ import java.io.IOException;
 
 public class EditarDatosPersonalesPacienteViewController {
     @FXML
-    public void VolverMisDatosPersonales(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/MisDatosPersonalesPaciente.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.getScene().setRoot(root);
+    public void volverAtras (ActionEvent event) throws IOException {
+        Navegacion.volver();
     }
 }
