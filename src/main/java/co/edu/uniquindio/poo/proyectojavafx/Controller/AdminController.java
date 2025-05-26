@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.proyectojavafx.Controller;
+package co.edu.uniquindio.poo.proyectojavafx.controller;
 
 import co.edu.uniquindio.poo.proyectojavafx.model.HistorialMedico;
 import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 public class AdminController {
     private static Medico medico;
-    private static Paciente paciente;
+    public static Paciente paciente;
     private static HospitalUQ hospitalUQ;
 
     public static Medico buscarMedico(String id){

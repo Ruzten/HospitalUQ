@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.viewController;
 
+import co.edu.uniquindio.poo.proyectojavafx.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MisDatosPersonalesPacienteViewController {
+
+
+
+    @FXML
+    public void initialize() {
+        Persona paciente = Sesion.getUsuarioActual();
+        System.out.println("Paciente logueado: " + paciente.getNombres());
+        txtCedula.setText(paciente.getId());
+    }
     @FXML
     public void VolverInterfazPaciente(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml"));
@@ -42,7 +52,10 @@ public class MisDatosPersonalesPacienteViewController {
     @FXML
     private Text txtTelefono;
     @FXML
-    private Text txt;
-
+    private Text txtCorreo;
+    @FXML
+    private Text txtDireccion;
+    @FXML
+    private Text txtTipoSangre;
 
 }

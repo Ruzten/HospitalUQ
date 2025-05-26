@@ -60,23 +60,23 @@ public class HospitalUQ {
 
         List<HistorialMedico> historialesMedico = new ArrayList<>();
         Medico medicoPrueba = new Medico(
-                "medicoprueba",                           // id
-                Genero.MASCULINO,                   // genero
-                "Carlos",                           // nombres
-                "Sanchez",                          // apellidos
-                45,                                 // edad
-                "3001234567",                       // telefono
-                "carlos.andrade@hospital.com",      // correo
-                "Av. Siempre Viva 742",             // direccion
-                "1234",                    // contrasena
-                "MLIC-98765",                       // NLicencia
-                true,                               // certificado (true porque está certificado)
-                horariosMedico,                     // horarios (la lista que creaste arriba)
-                "Consultorio 301",                  // ubicacion
-                Estado.ACTIVO,                      // estado (asumo un enum Estado)
-                Especialidad.CARDIOLOGO,           // especialidad (asumo un enum Especialidad)
-                citasMedico,                        // citasAsignadas (la lista que creaste arriba)
-                historialesMedico                   // historialesPacientes (la lista que creaste arriba)
+                "medicoprueba",                     // id
+                Genero.MASCULINO,                    // genero
+                "Carlos",                  // nombres
+                "Ramírez",                 // apellidos
+                45,                        // edad
+                "3001234567",              // teléfono
+                "carlos@hospital.com",     // correo
+                "Calle 123 #45-67",        // dirección
+                "1234",             // contraseña
+                "LIC-98765",               // NLicencia
+                true,                      // certificado
+                horariosMedico,                  // horarios
+                "Bogotá",                  // ubicación
+                Estado.ACTIVO,                    // estado
+                Especialidad.CARDIOLOGO,              // especialidad
+                citasMedico,           // citas asignadas
+                historialesMedico      // historiales pacientes
         );
         listaMedicos.add(medicoPrueba);
         Administrador adminPrueba = new Administrador(

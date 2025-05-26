@@ -1,8 +1,5 @@
 package co.edu.uniquindio.poo.proyectojavafx.viewController;
-import co.edu.uniquindio.poo.proyectojavafx.model.Administrador;
-import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
-import co.edu.uniquindio.poo.proyectojavafx.model.Medico;
-import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
+import co.edu.uniquindio.poo.proyectojavafx.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,15 +12,10 @@ import java.io.IOException;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 
-
 public class LoginViewController {
     @FXML
     public void VolverInicio(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InicioApp.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        Navegacion.volver();
     }
     @FXML
     private TextField txtUsuario;
@@ -43,35 +35,17 @@ public class LoginViewController {
 
             if (usuarioValido instanceof Paciente paciente) {
                 textoError.setVisible(true);
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml"));
-                Parent root = fxmlLoader.load();
-
-                InterfazPacienteViewController controller = fxmlLoader.getController();
-                controller.inicializarPaciente(paciente);
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml");
+                Sesion.setUsuarioActual(paciente);
 
             } else if (usuarioValido instanceof Medico medico) {
                 textoError.setVisible(true);
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml"));
-                Parent root = fxmlLoader.load();
-
-                InterfazMedicoViewController controller = fxmlLoader.getController();
-                controller.inicializarMedico(medico);
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml");
+                Sesion.setUsuarioActual(medico);
             } else if (usuarioValido instanceof Administrador admin) {
                 textoError.setVisible(true);
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml"));
-                Parent root = fxmlLoader.load();
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml");
+                Sesion.setUsuarioActual(admin);
             }
         }
         else {
