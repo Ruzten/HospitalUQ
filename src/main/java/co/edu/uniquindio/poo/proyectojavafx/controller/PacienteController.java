@@ -12,13 +12,13 @@ public class PacienteController {
     static HospitalUQ hospitalUQ = HospitalUQ.getInstancia();
     static Paciente paciente = (Paciente) Sesion.getUsuarioActual();
 
-    public static boolean registrarPaciente(){
-        return hospitalUQ.crearPaciente(paciente);
+    public static boolean registrarPaciente(Paciente pacientenuevo){
+        return hospitalUQ.crearPaciente(pacientenuevo);
     }
 
     public static Paciente actualizarPaciente(String numeroDocumento, String nombre, String apellidos,
-                                              LocalDate fechaNacimiento, String telefono, String email){
-        return hospitalUQ.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email);
+                                              LocalDate fechaNacimiento, String telefono, String email, String direccion){
+        return hospitalUQ.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email, direccion);
     }
 
     public static boolean eliminarPaciente(){

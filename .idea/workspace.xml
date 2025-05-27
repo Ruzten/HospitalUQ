@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bd8b128-5477-44aa-9f5d-194785e03f58" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/Controller/PacienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/Controller/PacienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/Controller/RegistrarseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/Controller/RegistrarseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/HospitalUQAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/HospitalUQAPP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/HospitalUQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/HospitalUQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/TipoSangre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/TipoSangre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/EditarDatosPersonalesPacienteViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/EditarDatosPersonalesPacienteViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/MisDatosPersonalesPacienteViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/MisDatosPersonalesPacienteViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/poo/proyectojavafx/EditarDatosPersonalesPaciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/poo/proyectojavafx/EditarDatosPersonalesPaciente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/poo/proyectojavafx/MisDatosPersonalesPaciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/poo/proyectojavafx/MisDatosPersonalesPaciente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/controller/MedicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/controller/MedicoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/controller/PacienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/controller/PacienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/HospitalUQ.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +79,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="co.edu.uniquindio.poo.proyectojavafx" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="co.edu.uniquindio.poo.proyectojavafx.model" />
     </key>
   </component>
   <component name="RunManager">
