@@ -56,7 +56,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="753.0" layoutY="347.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="384.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Solicitar cita médica" textFill="WHITE">
+      <Button layoutX="753.0" layoutY="347.0" mnemonicParsing="false" onAction="#IrAgendarCitaMedica" prefHeight="56.0" prefWidth="384.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Agendar cita médica" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>

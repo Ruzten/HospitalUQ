@@ -79,6 +79,46 @@ public class HospitalUQ {
                 historialesMedico      // historiales pacientes
         );
         listaMedicos.add(medicoPrueba);
+        Medico medicoPrueba1 = new Medico(
+                "medicoprueba1",                     // id
+                Genero.FEMENINO,                    // genero
+                "Carla",                  // nombres
+                "Perez",                 // apellidos
+                45,                        // edad
+                "3001234567",              // teléfono
+                "carlos@hospital.com",     // correo
+                "Calle 123 #45-67",        // dirección
+                "1234",             // contraseña
+                "LIC-98765",               // NLicencia
+                true,                      // certificado
+                horariosMedico,                  // horarios
+                "Bogotá",                  // ubicación
+                Estado.ACTIVO,                    // estado
+                Especialidad.MEDICO_GENERAL,              // especialidad
+                citasMedico,           // citas asignadas
+                historialesMedico      // historiales pacientes
+        );
+        listaMedicos.add(medicoPrueba1);
+        Medico medicoPrueba2 = new Medico(
+                "medicoprueba2",                     // id
+                Genero.MASCULINO,                    // genero
+                "pepe",                  // nombres
+                "Carota",                 // apellidos
+                45,                        // edad
+                "3001234567",              // teléfono
+                "carlos@hospital.com",     // correo
+                "Calle 123 #45-67",        // dirección
+                "1234",             // contraseña
+                "LIC-98765",               // NLicencia
+                true,                      // certificado
+                horariosMedico,                  // horarios
+                "Bogotá",                  // ubicación
+                Estado.ACTIVO,                    // estado
+                Especialidad.MEDICO_GENERAL,              // especialidad
+                citasMedico,           // citas asignadas
+                historialesMedico      // historiales pacientes
+        );
+        listaMedicos.add(medicoPrueba2);
         Administrador adminPrueba = new Administrador(
                 "admin",
                 Genero.MASCULINO,
@@ -194,6 +234,19 @@ public class HospitalUQ {
             }
         }
         return flag;
+    }
+
+    public LinkedList<Medico> buscarMedicoPorEspecialidad(Especialidad especialidad) {
+        LinkedList<Medico> medicosEncontrados = new LinkedList<>();
+        if (especialidad == null) {
+            return medicosEncontrados;
+        }
+        for (Medico medico : listaMedicos) {
+            if (medico.getEspecialidad() == especialidad) {
+                medicosEncontrados.add(medico);
+            }
+        }
+        return medicosEncontrados;
     }
 
     public Medico ActualizarMedico(Medico newmedico) {
@@ -369,21 +422,28 @@ public class HospitalUQ {
     public boolean crearPaciente(Paciente paciente) {
         // Verificar que el paciente no sea nulo
         if (paciente == null) {
+            System.out.println("paciente nulo");
             return false;
+
         }
 
         //Verificar que los datos no estan null
         if (paciente.getId() == null || paciente.getId().trim().isEmpty() || paciente.getGenero() == null || paciente.getNombres() == null || paciente.getApellidos() == null ||  paciente.getTelefono() == null || paciente.getCorreo() == null || paciente.getDireccion() == null || paciente.getContrasena() == null || paciente.getFechaNacimiento() == null || paciente.getRh() == null || paciente.getHistorialMedico() == null) {
+            System.out.println("datos faltantes");
             return false;
         }
 
         if(paciente.getEdad() < 0){
+            System.out.println("edad menor a 0");
             return false;
         }
 
         //Verificar que no hay duplicados
         for (Paciente p : listaPacientes) {
-            if (p.getId().equals(paciente.getId())) {}
+            if (p.getId().equals(paciente.getId())) {
+                System.out.println("paciente nulo");
+                return false;
+            }
         }
 
         // Agregar paciente

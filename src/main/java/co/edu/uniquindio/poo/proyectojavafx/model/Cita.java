@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
 import java.time.LocalDateTime;
+import java.util.Random;
 
 public class Cita {
     private String id;
@@ -13,6 +14,20 @@ public class Cita {
     private String observaciones;
 
 
+    private final Random random = new Random();
+
+
+    public Cita(Paciente paciente, Medico medico, LocalDateTime fecha,
+                Horario horario, String motivo) {
+        this.id = generarIdAleatorioSimple(); // Llama al método NO estático
+        this.paciente = paciente;
+        this.medico = medico;
+        this.fecha = fecha;
+        this.horario = horario;
+        this.motivo = motivo;
+        this.estado = EstadoCita.PROGRAMADA;
+        this.observaciones = "";
+    }
 
     public Cita(String id, Paciente paciente, Medico medico, LocalDateTime fecha,
                 Horario horario, String motivo) {
@@ -26,7 +41,13 @@ public class Cita {
         this.observaciones = "";
     }
 
-    // Getters y Setters
+    private String generarIdAleatorioSimple() {
+
+        int idGenerado = random.nextInt(200) + 1;
+        return String.valueOf(idGenerado);
+    }
+
+
     public String getId() {
         return id;
     }
@@ -107,5 +128,4 @@ public class Cita {
     public void registrarInasistencia() {
         this.estado = EstadoCita.NO_ASISTIO;
     }
-
 }
