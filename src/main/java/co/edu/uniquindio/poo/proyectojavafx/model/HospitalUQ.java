@@ -445,12 +445,6 @@ public class HospitalUQ {
 
         }
 
-        //Verificar que los datos no estan null
-        if (paciente.getId() == null || paciente.getId().trim().isEmpty() || paciente.getGenero() == null || paciente.getNombres() == null || paciente.getApellidos() == null ||  paciente.getTelefono() == null || paciente.getCorreo() == null || paciente.getDireccion() == null || paciente.getContrasena() == null || paciente.getFechaNacimiento() == null || paciente.getRh() == null || paciente.getHistorialMedico() == null) {
-            System.out.println("datos faltantes");
-            return false;
-        }
-
         if(paciente.getEdad() < 0){
             System.out.println("edad menor a 0");
             return false;

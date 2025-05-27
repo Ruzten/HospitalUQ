@@ -4,6 +4,7 @@ module co.edu.uniquindio.poo.proyectojavafx {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.compiler;
+    requires jakarta.mail;
 
 
     exports co.edu.uniquindio.poo.proyectojavafx;

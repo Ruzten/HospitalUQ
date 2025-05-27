@@ -37,7 +37,6 @@ public class PacienteCitasMedicasViewController {
         colHora.setCellValueFactory(new PropertyValueFactory<>("hora"));
         colMedico.setCellValueFactory(new PropertyValueFactory<>("nombreMedico"));
         colEspecialidad.setCellValueFactory(new PropertyValueFactory<>("especialidad"));
-
         cargarCitasPaciente();
     }
 

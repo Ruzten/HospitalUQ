@@ -179,6 +179,19 @@ public class PacienteAgendarCitaMedicaViewController {
                 horarioParaCita,
                 motivoCita);
 
+        EmailService emailService = new EmailService();
+
+        String correo = pacienteActual.getCorreo(); // ← correo del paciente asociado
+        String asunto = "Confirmación de cita médica";
+        String cuerpo = "Hola " + pacienteActual.getNombreCompleto() + ",\n\n" +
+                "Tu cita fue agendada exitosamente con el Dr(a). " +
+                medicoSeleccionado.getNombreCompleto() + " para el día " +
+                fechaHoraCita.toLocalDate() + " a las " + comboHora.getSelectionModel().getSelectedItem() + ".\n\n" +
+                "Motivo: " + motivoCita + "\n\n" +
+                "Gracias por confiar en HospitalUQ.";
+
+        emailService.enviarCorreo(correo, asunto, cuerpo);
+
         medicoSeleccionado.agregarCita(nuevaCita);
         hospitalUQ.agregarCitaGlobal(nuevaCita);
         mensajeMalo.setVisible(false);
