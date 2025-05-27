@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -35,31 +36,31 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Text fill="WHITE" layoutX="462.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Especialidad:" wrappingWidth="253.13671875">
+      <Text fill="WHITE" layoutX="462.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Especialidad:" wrappingWidth="253.13671875">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
       </Text>
-      <ComboBox fx:id="comboEspecialidad" layoutX="710.0" layoutY="262.0" prefHeight="22.0" prefWidth="227.0" />
-      <Text fill="WHITE" layoutX="462.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Médico:" wrappingWidth="253.13671875">
+      <ComboBox fx:id="comboEspecialidad" layoutX="710.0" layoutY="190.0" prefHeight="22.0" prefWidth="227.0" />
+      <Text fill="WHITE" layoutX="462.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Médico:" wrappingWidth="253.13671875">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
       </Text>
-      <ComboBox fx:id="comboMédico" layoutX="710.0" layoutY="313.0" prefHeight="22.0" prefWidth="227.0" />
-      <Text fill="WHITE" layoutX="462.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" wrappingWidth="253.13671875">
+      <ComboBox fx:id="comboMedico" layoutX="710.0" layoutY="241.0" prefHeight="22.0" prefWidth="227.0" />
+      <Text fill="WHITE" layoutX="462.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" wrappingWidth="253.13671875">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="462.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora:" wrappingWidth="253.13671875">
+      <Text fill="WHITE" layoutX="462.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora:" wrappingWidth="253.13671875">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
       </Text>
-      <ComboBox fx:id="comboHora" layoutX="710.0" layoutY="430.0" prefHeight="22.0" prefWidth="227.0" />
-      <DatePicker fx:id="dateFecha" layoutX="710.0" layoutY="373.0" prefHeight="25.0" prefWidth="227.0" />
-      <Button layoutX="589.0" layoutY="519.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="233.0" style="-fx-background-color: #132540; -fx-background-radius: 100;" text="Confirmar" textFill="WHITE">
+      <ComboBox fx:id="comboHora" layoutX="710.0" layoutY="358.0" prefHeight="22.0" prefWidth="227.0" />
+      <DatePicker fx:id="dateFecha" layoutX="710.0" layoutY="301.0" prefHeight="25.0" prefWidth="227.0" />
+      <Button layoutX="589.0" layoutY="519.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="0.0" prefWidth="233.0" style="-fx-background-color: #132540; -fx-background-radius: 100;" text="Confirmar" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>
@@ -77,5 +78,11 @@
             <Font name="Lato Bold" size="18.0" />
          </font>
       </Text>
+      <Text fill="WHITE" layoutX="462.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motivo:" wrappingWidth="253.13671875">
+         <font>
+            <Font name="Lato Bold" size="23.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txtMotivo" layoutX="710.0" layoutY="410.0" prefHeight="89.0" prefWidth="227.0" />
    </children>
 </AnchorPane>

@@ -79,6 +79,46 @@ public class HospitalUQ {
                 historialesMedico      // historiales pacientes
         );
         listaMedicos.add(medicoPrueba);
+        Medico medicoPrueba1 = new Medico(
+                "medicoprueba1",                     // id
+                Genero.FEMENINO,                    // genero
+                "Carla",                  // nombres
+                "Perez",                 // apellidos
+                45,                        // edad
+                "3001234567",              // teléfono
+                "carlos@hospital.com",     // correo
+                "Calle 123 #45-67",        // dirección
+                "1234",             // contraseña
+                "LIC-98765",               // NLicencia
+                true,                      // certificado
+                horariosMedico,                  // horarios
+                "Bogotá",                  // ubicación
+                Estado.ACTIVO,                    // estado
+                Especialidad.MEDICO_GENERAL,              // especialidad
+                citasMedico,           // citas asignadas
+                historialesMedico      // historiales pacientes
+        );
+        listaMedicos.add(medicoPrueba1);
+        Medico medicoPrueba2 = new Medico(
+                "medicoprueba2",                     // id
+                Genero.MASCULINO,                    // genero
+                "pepe",                  // nombres
+                "Carota",                 // apellidos
+                45,                        // edad
+                "3001234567",              // teléfono
+                "carlos@hospital.com",     // correo
+                "Calle 123 #45-67",        // dirección
+                "1234",             // contraseña
+                "LIC-98765",               // NLicencia
+                true,                      // certificado
+                horariosMedico,                  // horarios
+                "Bogotá",                  // ubicación
+                Estado.ACTIVO,                    // estado
+                Especialidad.MEDICO_GENERAL,              // especialidad
+                citasMedico,           // citas asignadas
+                historialesMedico      // historiales pacientes
+        );
+        listaMedicos.add(medicoPrueba2);
         Administrador adminPrueba = new Administrador(
                 "admin",
                 Genero.MASCULINO,
@@ -194,6 +234,19 @@ public class HospitalUQ {
             }
         }
         return flag;
+    }
+
+    public LinkedList<Medico> buscarMedicoPorEspecialidad(Especialidad especialidad) {
+        LinkedList<Medico> medicosEncontrados = new LinkedList<>();
+        if (especialidad == null) {
+            return medicosEncontrados;
+        }
+        for (Medico medico : listaMedicos) {
+            if (medico.getEspecialidad() == especialidad) {
+                medicosEncontrados.add(medico);
+            }
+        }
+        return medicosEncontrados;
     }
 
     public Medico ActualizarMedico(Medico newmedico) {

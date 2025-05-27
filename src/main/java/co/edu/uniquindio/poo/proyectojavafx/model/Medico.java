@@ -140,5 +140,16 @@ public class Medico extends Persona {
         this.historialesPacientes = historialesPacientes;
     }
 
+    @Override
+    public String toString() {
+        String prefijo;
+        if (this.getGenero() == Genero.MASCULINO) {
+            prefijo = "Dr. ";
+        } else {
+            prefijo = "Dra. ";
+        }
+        return prefijo + getNombres() + " " + getApellidos();
+    }
+
 
 }

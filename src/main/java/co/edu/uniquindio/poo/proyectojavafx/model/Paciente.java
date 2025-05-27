@@ -51,4 +51,5 @@ public class Paciente extends Persona {
             setEdad(edadCalculada);
         }
     }
+
 }
