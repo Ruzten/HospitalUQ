@@ -1,12 +1,11 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
 public class HospitalUQ {
     private String nombre;
@@ -16,6 +15,7 @@ public class HospitalUQ {
     private static LinkedList<Administrador> listaAdministradores;
     private LinkedList<HistorialMedico> listaDeHistorialesMedicos;
     private static HospitalUQ instancia;
+    private Persona paciente = Sesion.getUsuarioActual();
 
 
     public HospitalUQ(String nombre) {
@@ -53,7 +53,7 @@ public class HospitalUQ {
         listaPacientes.add(pacientePrueba);
 
         List<Horario> horariosPrueba = new LinkedList<>();
-        horariosPrueba.add(new Horario(DayOfWeek.MONDAY, LocalTime.parse("08:00"), LocalTime.parse("12:00")  ));
+        horariosPrueba.add(new Horario(DayOfWeek.MONDAY, LocalTime.parse("08:00"), LocalTime.parse("12:00")));
 
         List<Horario> horariosMedico = new ArrayList<>();
         List<Cita> citasMedico = new ArrayList<>();
@@ -243,7 +243,6 @@ public class HospitalUQ {
     }
 
 
-
     public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico) {
         // Verificar que los parámetros no sean nulos
         if (idPaciente == null || historialMedico == null) {
@@ -304,8 +303,6 @@ public class HospitalUQ {
     }
 
 
-
-
     public LinkedList<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente) {
         if (idPaciente == null) {
             // Retorna lista vacía si el ID es nulo
@@ -323,7 +320,7 @@ public class HospitalUQ {
 
 
     public List<Paciente> obtenerPacientes() {
-        return new LinkedList<>(listaPacientes) ;
+        return new LinkedList<>(listaPacientes);
     }
 
 
@@ -336,103 +333,30 @@ public class HospitalUQ {
         return null;
     }
 
+
+
     public Paciente actualizarPaciente(String nombre, String apellidos, LocalDate fechaNacimiento, String telefono, String email, String direccion) {
 
-            if (nombre != null) {
-                paciente.setNombres(nombre);
-                }
-            if (apellidos != null) {
-                paciente.setApellidos(apellidos);
-                }
-            if (fechaNacimiento != null) {
-                paciente.setFechaNacimiento(fechaNacimiento);
-                }
-            if (telefono != null) {
-                paciente.setTelefono(telefono);
-                }
-            if (email != null) {
-                paciente.setCorreo(email);
-                }
+        // Buscar paciente
+
+        if (nombre != null) {
+            paciente.setNombres(nombre);
+        }
+        if (apellidos != null) {
+            paciente.setApellidos(apellidos);
+        }
+        if (fechaNacimiento != null) {
+            paciente.setFecha;
+        }
+        if (telefono != null) {
+            paciente.setTelefono(telefono);
+        }
         if (email != null) {
             paciente.setCorreo(email);
         }
-            return paciente;
-            }
+        if (email != null) {
+            paciente.setCorreo(email);
         }
-
-
-    public Paciente actualizarPacienteMedico(String numeroDocumento, String nombre, String apellidos,
-                                       LocalDate fechaNacimiento, String telefono, String email) {
-        if (numeroDocumento == null) {
-            return null;
-        }
-
-        // Buscar el paciente por número de documento
-        for (Paciente paciente : listaPacientes) {
-            if (paciente.getId().equals(numeroDocumento)) {
-                // Actualizar solo los campos que no son null
-                if (nombre != null) {
-                    paciente.setNombres(nombre);
-                }
-                if (apellidos != null) {
-                    paciente.setApellidos(apellidos);
-                }
-                if (fechaNacimiento != null) {
-                    paciente.setFechaNacimiento(fechaNacimiento);
-                }
-                if (telefono != null) {
-                    paciente.setTelefono(telefono);
-                }
-                if (email != null) {
-                    paciente.setCorreo(email);
-                }
-                return paciente;
-            }
-        }
-
-        return null;
+        return paciente;
     }
-
-
-    public boolean eliminarPaciente(String id) {
-        boolean flag = false;
-        for (Paciente paciente : listaPacientes) {
-            if (paciente.getId().equals(id)) {
-                listaPacientes.remove(paciente);
-                flag = true;
-                return true;
-            }
-        }
-        return flag;
-    }
-
-    public boolean crearPaciente(Paciente paciente) {
-        // Validar que el paciente no sea null
-        if (paciente == null) {
-            return false;
-        }
-
-        // Validar que los datos obligatorios no sean null o vacíos
-        if (paciente.getId() == null || paciente.getId().trim().isEmpty() ||
-                paciente.getNombres() == null || paciente.getNombres().trim().isEmpty() ||
-                paciente.getApellidos() == null || paciente.getApellidos().trim().isEmpty()) {
-            return false;
-        }
-
-        // Verificar que no exista otro paciente con el mismo número de documento
-        for (Paciente p : listaPacientes) {
-            if (p.getId().equals(paciente.getId())) {
-                return false;
-            }
-        }
-
-        // Inicializar la lista de historiales médicos si es null
-        if (paciente.getHistorialMedico() == null) {
-            paciente.setHistorialMedico(new LinkedList<>());
-        }
-
-        // Agregar el paciente a la lista
-        return listaPacientes.add(paciente);
-    }
-
 }
