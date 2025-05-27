@@ -4,8 +4,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.LinkedList;
 
 public class HospitalUQ {
     private String nombre;
@@ -243,6 +243,7 @@ public class HospitalUQ {
     }
 
 
+
     public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico) {
         // Verificar que los parámetros no sean nulos
         if (idPaciente == null || historialMedico == null) {
@@ -303,6 +304,8 @@ public class HospitalUQ {
     }
 
 
+
+
     public LinkedList<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente) {
         if (idPaciente == null) {
             // Retorna lista vacía si el ID es nulo
@@ -333,12 +336,14 @@ public class HospitalUQ {
         return null;
     }
 
+    public Paciente actualizarPaciente(String numeroDocumento, String nombre, String apellidos, LocalDate fechaNacimiento, String telefono, String email, String direccion) {
+        //Buscar usuario
+        Paciente paciente = buscarPaciente(numeroDocumento);
+        if (paciente == null) {
+            return null;
+        }
 
-
-    public Paciente actualizarPaciente(String nombre, String apellidos, LocalDate fechaNacimiento, String telefono, String email, String direccion) {
-
-        // Buscar paciente
-
+        //Aplicar cambios
         if (nombre != null) {
             paciente.setNombres(nombre);
         }
@@ -346,7 +351,7 @@ public class HospitalUQ {
             paciente.setApellidos(apellidos);
         }
         if (fechaNacimiento != null) {
-            paciente.setFecha;
+            paciente.setFechaNacimiento(fechaNacimiento);
         }
         if (telefono != null) {
             paciente.setTelefono(telefono);
@@ -354,9 +359,45 @@ public class HospitalUQ {
         if (email != null) {
             paciente.setCorreo(email);
         }
-        if (email != null) {
-            paciente.setCorreo(email);
+        if (direccion != null) {
+            paciente.setCorreo(direccion);
         }
+
         return paciente;
     }
+
+    public boolean crearPaciente(Paciente paciente) {
+        // Verificar que el paciente no sea nulo
+        if (paciente == null) {
+            return false;
+        }
+
+        //Verificar que los datos no estan null
+        if (paciente.getId() == null || paciente.getId().trim().isEmpty() || paciente.getGenero() == null || paciente.getNombres() == null || paciente.getApellidos() == null ||  paciente.getTelefono() == null || paciente.getCorreo() == null || paciente.getDireccion() == null || paciente.getContrasena() == null || paciente.getFechaNacimiento() == null || paciente.getRh() == null || paciente.getHistorialMedico() == null) {
+            return false;
+        }
+
+        if(paciente.getEdad() < 0){
+            return false;
+        }
+
+        //Verificar que no hay duplicados
+        for (Paciente p : listaPacientes) {
+            if (p.getId().equals(paciente.getId())) {}
+        }
+
+        // Agregar paciente
+        listaPacientes.add(paciente);
+        return true;
+    }
+
+    public boolean eliminarPaciente(String id) {
+        Paciente paciente = buscarPaciente(id);
+        if (paciente == null) {
+            return false;
+        }
+        listaPacientes.remove(paciente);
+        return true;
+    }
+
 }

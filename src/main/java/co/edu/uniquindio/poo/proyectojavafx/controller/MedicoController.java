@@ -34,8 +34,8 @@ public class MedicoController {
   }
 
   public static Paciente actualizarPaciente(String numeroDocumento, String nombre, String apellidos,
-                                            LocalDate fechaNacimiento, String telefono, String email){
-        return hospitalUQ.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email);
+                                            LocalDate fechaNacimiento, String telefono, String email, String direccion){
+        return hospitalUQ.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email, direccion);
   }
 
   public static Medico actualizarMedico(Medico medico){

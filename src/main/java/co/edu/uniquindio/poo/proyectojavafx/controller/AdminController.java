@@ -5,6 +5,7 @@ import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
 import co.edu.uniquindio.poo.proyectojavafx.model.Medico;
 import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class AdminController {
@@ -32,8 +33,9 @@ public class AdminController {
         return hospitalUQ.ActualizarMedico(medico);
     }
 
-    public static Paciente ActualizarPaciente(Paciente paciente){
-        return hospitalUQ.actualizarPaciente(paciente);
+    public static Paciente ActualizarPaciente(String numeroDocumento, String nombre, String apellidos,
+                                              LocalDate fechaNacimiento, String telefono, String email, String direccion){
+        return hospitalUQ.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email, direccion);
     }
 
     public static boolean eliminarMedico(String id){
