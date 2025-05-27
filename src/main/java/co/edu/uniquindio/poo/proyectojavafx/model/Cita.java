@@ -128,4 +128,21 @@ public class Cita {
     public void registrarInasistencia() {
         this.estado = EstadoCita.NO_ASISTIO;
     }
+
+    public String getNombreMedico() {
+        return medico != null ? medico.getNombreCompleto() : "";
+    }
+
+    public String getEspecialidad() {
+        return medico != null && medico.getEspecialidad() != null ? medico.getEspecialidad().toString() : "";
+    }
+
+    public String getHora() {
+        return fecha != null ? fecha.toLocalTime().toString() : "";
+    }
+
+    public String getFechaSimple() {
+        return fecha != null ? fecha.toLocalDate().toString() : "";
+    }
+
 }

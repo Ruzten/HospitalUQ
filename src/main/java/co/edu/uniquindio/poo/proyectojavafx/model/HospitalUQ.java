@@ -14,6 +14,7 @@ public class HospitalUQ {
     private static LinkedList<Paciente> listaPacientes;
     private static LinkedList<Administrador> listaAdministradores;
     private LinkedList<HistorialMedico> listaDeHistorialesMedicos;
+    private ArrayList<Cita> citasGlobales;
     private static HospitalUQ instancia;
     private Persona paciente = Sesion.getUsuarioActual();
 
@@ -24,6 +25,7 @@ public class HospitalUQ {
         this.listaPacientes = new LinkedList<>();
         this.listaAdministradores = new LinkedList<>();
         this.listaDeHistorialesMedicos = new LinkedList<>();
+        this.citasGlobales = new ArrayList<>();
     }
 
     public static HospitalUQ getInstancia() {
@@ -131,6 +133,22 @@ public class HospitalUQ {
                 "admin"
         );
         listaAdministradores.add(adminPrueba);
+    }
+
+    // Metodo de agregar citaGlobal
+    public void agregarCitaGlobal (Cita cita) {
+        citasGlobales.add(cita);
+        System.out.println("cita agg al global");
+    }
+    // Metodo de buscar la cita segun el paciente
+    public ArrayList<Cita> citasPorPaciente (Paciente paciente) {
+        ArrayList citas = new ArrayList<>();
+        for (Cita cita : citasGlobales) {
+            boolean x = cita.getEstado().equals(EstadoCita.PROGRAMADA);
+            if (cita.getPaciente() == paciente && x )
+                citas.add(cita);
+        }
+        return citas;
     }
 
     // METODO DE BUSCAR USUARIO PARA LOGIN

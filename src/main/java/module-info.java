@@ -3,6 +3,7 @@ module co.edu.uniquindio.poo.proyectojavafx {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires java.compiler;
 
 
     exports co.edu.uniquindio.poo.proyectojavafx;
