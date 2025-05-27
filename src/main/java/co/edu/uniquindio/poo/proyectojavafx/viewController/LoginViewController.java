@@ -1,36 +1,25 @@
 package co.edu.uniquindio.poo.proyectojavafx.viewController;
-import co.edu.uniquindio.poo.proyectojavafx.model.Administrador;
-import co.edu.uniquindio.poo.proyectojavafx.model.HospitalUQ;
-import co.edu.uniquindio.poo.proyectojavafx.model.Medico;
-import co.edu.uniquindio.poo.proyectojavafx.model.Paciente;
+import co.edu.uniquindio.poo.proyectojavafx.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 
-
 public class LoginViewController {
-    @FXML
-    public void VolverInicio(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InicioApp.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
     @FXML
     private TextField txtUsuario;
     @FXML
     private PasswordField txtContrasena;
     @FXML
     private Text textoError;
+
+    @FXML
+    public void VolverInicio(ActionEvent event) throws IOException {
+        Navegacion.volver();
+    }
+
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
         String id = txtUsuario.getText();
@@ -38,40 +27,21 @@ public class LoginViewController {
 
         Object usuarioValido = HospitalUQ.buscarUsuario(id, clave);
 
-
         if (usuarioValido != null) {
 
             if (usuarioValido instanceof Paciente paciente) {
-                textoError.setVisible(true);
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml"));
-                Parent root = fxmlLoader.load();
-
-                InterfazPacienteViewController controller = fxmlLoader.getController();
-                controller.inicializarPaciente(paciente);
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                textoError.setVisible(false);
+                Sesion.setUsuarioActual(paciente);
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml");
 
             } else if (usuarioValido instanceof Medico medico) {
-                textoError.setVisible(true);
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml"));
-                Parent root = fxmlLoader.load();
-
-                InterfazMedicoViewController controller = fxmlLoader.getController();
-                controller.inicializarMedico(medico);
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                textoError.setVisible(false);
+                Sesion.setUsuarioActual(medico);
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazDoctor.fxml");
             } else if (usuarioValido instanceof Administrador admin) {
-                textoError.setVisible(true);
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml"));
-                Parent root = fxmlLoader.load();
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                textoError.setVisible(false);
+                Sesion.setUsuarioActual(admin);
+                Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazAdmin.fxml");
             }
         }
         else {
@@ -79,5 +49,4 @@ public class LoginViewController {
             textoError.setText("Usuario o contraseña incorrectos");
         }
     }
-
 }

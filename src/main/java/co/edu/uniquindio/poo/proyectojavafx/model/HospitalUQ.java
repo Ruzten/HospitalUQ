@@ -60,23 +60,23 @@ public class HospitalUQ {
 
         List<HistorialMedico> historialesMedico = new ArrayList<>();
         Medico medicoPrueba = new Medico(
-                "medicoprueba",                           // id
-                Genero.MASCULINO,                   // genero
-                "Carlos",                           // nombres
-                "Sanchez",                          // apellidos
-                45,                                 // edad
-                "3001234567",                       // telefono
-                "carlos.andrade@hospital.com",      // correo
-                "Av. Siempre Viva 742",             // direccion
-                "1234",                    // contrasena
-                "MLIC-98765",                       // NLicencia
-                true,                               // certificado (true porque está certificado)
-                horariosMedico,                     // horarios (la lista que creaste arriba)
-                "Consultorio 301",                  // ubicacion
-                Estado.ACTIVO,                      // estado (asumo un enum Estado)
-                Especialidad.CARDIOLOGO,           // especialidad (asumo un enum Especialidad)
-                citasMedico,                        // citasAsignadas (la lista que creaste arriba)
-                historialesMedico                   // historialesPacientes (la lista que creaste arriba)
+                "medicoprueba",                     // id
+                Genero.MASCULINO,                    // genero
+                "Carlos",                  // nombres
+                "Ramírez",                 // apellidos
+                45,                        // edad
+                "3001234567",              // teléfono
+                "carlos@hospital.com",     // correo
+                "Calle 123 #45-67",        // dirección
+                "1234",             // contraseña
+                "LIC-98765",               // NLicencia
+                true,                      // certificado
+                horariosMedico,                  // horarios
+                "Bogotá",                  // ubicación
+                Estado.ACTIVO,                    // estado
+                Especialidad.CARDIOLOGO,              // especialidad
+                citasMedico,           // citas asignadas
+                historialesMedico      // historiales pacientes
         );
         listaMedicos.add(medicoPrueba);
         Administrador adminPrueba = new Administrador(
@@ -336,24 +336,32 @@ public class HospitalUQ {
         return null;
     }
 
-    public Paciente actualizarPaciente(Paciente paciente) {
-        if (paciente == null || paciente.getId() == null) {
-            return null;
-        }
+    public Paciente actualizarPaciente(String nombre, String apellidos, LocalDate fechaNacimiento, String telefono, String email, String direccion) {
 
-        //Buscar el paciente y actualizar los datos
-        for (int i = 0; i < listaPacientes.size(); i++) {
-            if (listaPacientes.get(i).getId().equals(paciente.getId())) {
-                listaPacientes.set(i, paciente);
-                return paciente;
+            if (nombre != null) {
+                paciente.setNombres(nombre);
+                }
+            if (apellidos != null) {
+                paciente.setApellidos(apellidos);
+                }
+            if (fechaNacimiento != null) {
+                paciente.setFechaNacimiento(fechaNacimiento);
+                }
+            if (telefono != null) {
+                paciente.setTelefono(telefono);
+                }
+            if (email != null) {
+                paciente.setCorreo(email);
+                }
+        if (email != null) {
+            paciente.setCorreo(email);
+        }
+            return paciente;
             }
         }
 
-        // Si el paciente no existe, lo agregamos a la lista
-        listaPacientes.add(paciente);
-        return paciente;
-    }
-    public Paciente actualizarPaciente(String numeroDocumento, String nombre, String apellidos,
+
+    public Paciente actualizarPacienteMedico(String numeroDocumento, String nombre, String apellidos,
                                        LocalDate fechaNacimiento, String telefono, String email) {
         if (numeroDocumento == null) {
             return null;

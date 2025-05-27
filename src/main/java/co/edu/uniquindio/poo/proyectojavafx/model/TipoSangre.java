@@ -6,13 +6,14 @@ public enum TipoSangre {
     O_POSITIVO("O+"), O_NEGATIVO("O-"),
     AB_POSITIVO("AB+"), AB_NEGATIVO("AB-");
 
-    private final String simbolo;
+    private final String texto;
 
-    TipoSangre(String simbolo) {
-        this.simbolo = simbolo;
+    TipoSangre(String texto) {
+        this.texto = texto;
     }
 
-    public String getSimbolo() {
-        return simbolo;
+    @Override
+    public String toString() {
+        return texto;
     }
 }

@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 public class AdminController {
     private static Medico medico;
-    private static Paciente paciente;
+    public static Paciente paciente;
     private static HospitalUQ hospitalUQ;
 
     public static Medico buscarMedico(String id){

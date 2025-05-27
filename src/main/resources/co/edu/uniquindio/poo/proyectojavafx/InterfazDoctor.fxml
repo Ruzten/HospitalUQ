@@ -26,7 +26,7 @@
             <Image url="@../../../../../Images/LogoHospitalUQ.png" />
          </image>
       </ImageView>
-      <Button layoutX="1159.0" layoutY="58.0" mnemonicParsing="false" onAction="#volverInicio" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cerrar Sesión" textFill="WHITE">
+      <Button layoutX="1159.0" layoutY="58.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Cerrar Sesión" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="14.0" />
          </font>
