@@ -180,6 +180,7 @@ public class PacienteAgendarCitaMedicaViewController {
                 motivoCita);
 
         medicoSeleccionado.agregarCita(nuevaCita);
+        hospitalUQ.agregarCitaGlobal(nuevaCita);
         mensajeMalo.setVisible(false);
         mensajeBueno.setVisible(true);
 

@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bd8b128-5477-44aa-9f5d-194785e03f58" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/PacienteCitasMedicasViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/Cita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/HospitalUQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/model/HospitalUQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/InterfazPacienteViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/InterfazPacienteViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/PacienteAgendarCitaMedicaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/proyectojavafx/viewController/PacienteAgendarCitaMedicaViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,25 +61,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HospitalUQAPP.executor": "Run",
-    "Maven.ProyectoJavaFx [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
-    "Maven.ProyectoJavaFx [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "interfaz",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Steven/Documents/Workspace/Programacion I - Segundo Semestre/ProyectoJavaFx",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HospitalUQAPP.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ProyectoJavaFx [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ProyectoJavaFx [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;interfaz&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Steven/Documents/Workspace/Programacion I - Segundo Semestre/ProyectoJavaFx&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="co.edu.uniquindio.poo.proyectojavafx" />
@@ -103,8 +107,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -121,7 +125,6 @@
       <workItem from="1748202086060" duration="5664000" />
       <workItem from="1748238760835" duration="1396000" />
       <workItem from="1748316365223" duration="3807000" />
-      <workItem from="1748374424807" duration="588000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
