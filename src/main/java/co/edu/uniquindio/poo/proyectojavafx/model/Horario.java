@@ -27,7 +27,7 @@ public class Horario {
     }
 
     //Constructor para que acepte la informaicón en string
-    public static Horario fromString(String diaSemana, String horaInicio, String horaFin) {
+    public Horario fromString(String diaSemana, String horaInicio, String horaFin) {
         DayOfWeek dia = DayOfWeek.valueOf(diaSemana.toUpperCase());
         LocalTime inicio = LocalTime.parse(horaInicio);
         LocalTime fin = LocalTime.parse(horaFin);
