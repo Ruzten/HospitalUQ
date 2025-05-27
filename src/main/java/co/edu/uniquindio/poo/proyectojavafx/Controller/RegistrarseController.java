@@ -1,7 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.controller;
 
 import co.edu.uniquindio.poo.proyectojavafx.model.*;
-import co.edu.uniquindio.poo.proyectojavafx.viewController.RegistrarseViewController;
 import javafx.scene.control.Alert;
 
 import java.time.LocalDate;

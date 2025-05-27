@@ -94,7 +94,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="724.0" layoutY="638.0" mnemonicParsing="false" onAction="#VolverInterfazPaciente" prefHeight="47.0" prefWidth="265.0" style="-fx-background-color: #132540; -fx-background-radius: 100;" text="Cancelar" textFill="WHITE">
+      <Button layoutX="724.0" layoutY="638.0" mnemonicParsing="false" onAction="#volverAtras" prefHeight="47.0" prefWidth="265.0" style="-fx-background-color: #132540; -fx-background-radius: 100;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Lato Bold" size="23.0" />
          </font>

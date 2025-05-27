@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
 public class MisDatosPersonalesPacienteViewController {
     @FXML
@@ -28,16 +29,30 @@ public class MisDatosPersonalesPacienteViewController {
 
     @FXML
     public void initialize() {
-        Persona paciente = Sesion.getUsuarioActual();
+        Paciente paciente = (Paciente) Sesion.getUsuarioActual();
         System.out.println("Paciente logueado: " + paciente.getNombres());
+
         txtCedula.setText(paciente.getId());
+
+        txtGenero.setText(paciente.getGenero().toString());
+        txtNombres.setText(paciente.getNombres());
+        txtApellidos.setText(paciente.getApellidos());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaNacimientoStr = paciente.getFechaNacimiento().format(formatter);
+
+        txtfechaNacimiento.setText(fechaNacimientoStr);
+        txtTelefono.setText(paciente.getTelefono());
+        txtCorreo.setText(paciente.getCorreo());
+        txtDireccion.setText(paciente.getDireccion());
+        txtTipoSangre.setText(paciente.getRh().toString());
     }
     @FXML
-    public void VolverInterfazPaciente(ActionEvent event) throws IOException {
+    public void volverAtras(ActionEvent event) throws IOException {
         Navegacion.volver();
     }
     @FXML
     public void IrEditarDatosPersonalesPaciente(ActionEvent event) throws IOException {
-        Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/MisDatosPersonales.fxml");
+        Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/EditarDatosPersonalesPaciente.fxml");
     }
 }

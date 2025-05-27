@@ -336,24 +336,32 @@ public class HospitalUQ {
         return null;
     }
 
-    public Paciente actualizarPaciente(Paciente paciente) {
-        if (paciente == null || paciente.getId() == null) {
-            return null;
-        }
+    public Paciente actualizarPaciente(String nombre, String apellidos, LocalDate fechaNacimiento, String telefono, String email, String direccion) {
 
-        //Buscar el paciente y actualizar los datos
-        for (int i = 0; i < listaPacientes.size(); i++) {
-            if (listaPacientes.get(i).getId().equals(paciente.getId())) {
-                listaPacientes.set(i, paciente);
-                return paciente;
+            if (nombre != null) {
+                paciente.setNombres(nombre);
+                }
+            if (apellidos != null) {
+                paciente.setApellidos(apellidos);
+                }
+            if (fechaNacimiento != null) {
+                paciente.setFechaNacimiento(fechaNacimiento);
+                }
+            if (telefono != null) {
+                paciente.setTelefono(telefono);
+                }
+            if (email != null) {
+                paciente.setCorreo(email);
+                }
+        if (email != null) {
+            paciente.setCorreo(email);
+        }
+            return paciente;
             }
         }
 
-        // Si el paciente no existe, lo agregamos a la lista
-        listaPacientes.add(paciente);
-        return paciente;
-    }
-    public Paciente actualizarPaciente(String numeroDocumento, String nombre, String apellidos,
+
+    public Paciente actualizarPacienteMedico(String numeroDocumento, String nombre, String apellidos,
                                        LocalDate fechaNacimiento, String telefono, String email) {
         if (numeroDocumento == null) {
             return null;

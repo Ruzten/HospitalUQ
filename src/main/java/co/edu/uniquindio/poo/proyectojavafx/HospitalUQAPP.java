@@ -25,7 +25,7 @@ public class HospitalUQAPP extends Application {
         primaryStage.setTitle("HospitalUQ");
 
         primaryStage.show();
-        HospitalUQ hospitalUQ = new HospitalUQ("HospitalUQ");
+        HospitalUQ hospitalUQ = HospitalUQ.getInstancia();
         hospitalUQ.iniciarDatosQuemados();
     }
 
