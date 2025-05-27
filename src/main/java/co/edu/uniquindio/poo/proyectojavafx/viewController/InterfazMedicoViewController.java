@@ -31,4 +31,9 @@ public class InterfazMedicoViewController {
         Navegacion.reiniciarHistorial();
     }
 
+    @FXML
+    public void irRegistrarMedicoID (ActionEvent event) throws  IOException {
+        Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/Doctor-RegistrarHistorialMedicoID.fxml");
+    }
+
 }
