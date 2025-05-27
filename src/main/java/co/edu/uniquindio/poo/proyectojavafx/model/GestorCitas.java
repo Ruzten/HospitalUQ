@@ -12,7 +12,6 @@ public class GestorCitas {
         this.citasProgramadas = new ArrayList<>();
     }
 
-    // agendar una cita
     public boolean agendarCita (String id, Paciente paciente, Medico medico, LocalDateTime fecha, Horario horario, String motivo, EstadoCita estado, String observaciones ) {
         Cita cita = new Cita(id, paciente, medico, fecha, horario, motivo);
         boolean anadida = citasProgramadas.add(cita);

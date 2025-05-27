@@ -12,7 +12,6 @@ public class Consultorio {
         this.disponible = true;
         this.medicoAsignado = null;
     }
-    //GETTERS AND SETTERS
 
     public boolean isDisponible() {
         return disponible;
