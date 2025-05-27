@@ -44,13 +44,14 @@ public class EditarDatosPersonalesPacienteViewController {
 
     @FXML
     private void confirmar(ActionEvent event) throws IOException {
+        String numeroDocumento = Sesion.getUsuarioActual().getId();
         String nombre = txtNombres.getText();
         String apellidos = txtApellidos.getText();
         LocalDate fechaNacimiento = dateFechaNacimiento.getValue();
         String telefono = txtTelefono.getText();
         String email = txtCorreo.getText();
         String direccion = txtDireccion.getText();
-        PacienteController.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email));
+        PacienteController.actualizarPaciente(numeroDocumento, nombre, apellidos, fechaNacimiento, telefono, email, direccion);
         mostrarAlerta("Datos cambiados exitosamente!");
         Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/InterfazPaciente.fxml");
     }

@@ -4,8 +4,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.LinkedList;
 
 public class HospitalUQ {
     private String nombre;
@@ -15,6 +15,7 @@ public class HospitalUQ {
     private static LinkedList<Administrador> listaAdministradores;
     private LinkedList<HistorialMedico> listaDeHistorialesMedicos;
     private static HospitalUQ instancia;
+    private Persona paciente = Sesion.getUsuarioActual();
 
 
     public HospitalUQ(String nombre) {
@@ -242,6 +243,7 @@ public class HospitalUQ {
     }
 
 
+
     public boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico) {
         // Verificar que los parámetros no sean nulos
         if (idPaciente == null || historialMedico == null) {
@@ -300,6 +302,8 @@ public class HospitalUQ {
         }
         return false;
     }
+
+
 
 
     public LinkedList<HistorialMedico> obtenerHistorialMedicoPaciente(String idPaciente) {
