@@ -91,7 +91,7 @@ public class DoctorRegistrarHistorialMedicoViewController {
                 return;
             }
 
-            List<String> alergias = Arrays.asList("Penicilina", "Aspirina", "Látex");
+            List<String> alergias = txtAlergias.getText().trim().isEmpty() ? null : Arrays.asList(txtAlergias.getText().split(","));
             String tipoSANGRE = "+O";
 
             // Convertir los archivos seleccionados a lista de rutas

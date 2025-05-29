@@ -4,10 +4,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
+
 
 public class HospitalUQ {
     private String nombre;
@@ -19,6 +17,8 @@ public class HospitalUQ {
     private ArrayList<Cita> citasGlobales;
     private static HospitalUQ instancia;
     private Persona paciente = Sesion.getUsuarioActual();
+    private static List<HistorialMedico> historialesPacientes = new ArrayList<>();
+
 
 
     public HospitalUQ(String nombre) {
@@ -135,6 +135,45 @@ public class HospitalUQ {
                 "admin"
         );
         listaAdministradores.add(adminPrueba);
+
+        List<String> alergias1 = Arrays.asList("Penicilina", "Aspirina");
+        List<String> alergias2 = Arrays.asList("Polen");
+        List<String> archivosAdjuntos1 = Arrays.asList("radiografia.pdf", "analisis_sangre.pdf");
+        List<String> archivosAdjuntos2 = Arrays.asList("receta.pdf");
+
+
+        HistorialMedico historial1 = new HistorialMedico(
+                "HIST001",
+                pacientePrueba,
+                "A-",
+                alergias1,
+                LocalDate.parse("2024-01-15"),
+                LocalDateTime.parse("2024-01-15T10:30:00"),
+                "Migraña crónica",
+                "Sumatriptan 50mg cada 12 horas",
+                medicoPrueba,
+                archivosAdjuntos1,
+                "Paciente reporta dolores de cabeza frecuentes"
+        );
+
+        HistorialMedico historial2 = new HistorialMedico(
+                "HIST002",
+                pacientePrueba,
+                "A-",
+                alergias2,
+                LocalDate.parse("2024-03-20"),
+                LocalDateTime.parse("2024-03-20T15:45:00"),
+                "Bronquitis aguda",
+                "Amoxicilina 500mg cada 8 horas por 7 días",
+                medicoPrueba,
+                archivosAdjuntos2,
+                "Seguimiento en 2 semanas"
+        );
+
+        // Agregamos los historiales a la lista
+        historialesPacientes.add(historial1);
+        historialesPacientes.add(historial2);
+
     }
 
     // Metodo de agregar citaGlobal
