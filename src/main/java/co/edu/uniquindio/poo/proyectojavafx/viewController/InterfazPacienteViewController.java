@@ -23,6 +23,10 @@ public class InterfazPacienteViewController {
         Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/MisDatosPersonalesPaciente.fxml");
     }
     @FXML
+    public void IrHistorialMedico(ActionEvent event) throws IOException {
+        Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/Paciente-HistorialMedico.fxml");
+    }
+    @FXML
     public void IrCitasMedicas(ActionEvent event) throws IOException {
         Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/Paciente-CitasMedicas.fxml");
     }

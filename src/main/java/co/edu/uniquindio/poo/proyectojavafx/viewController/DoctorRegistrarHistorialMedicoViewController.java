@@ -91,7 +91,7 @@ public class DoctorRegistrarHistorialMedicoViewController {
                 return;
             }
 
-            List<String> alergias = Arrays.asList("Penicilina", "Aspirina", "Látex");
+            List<String> alergias = txtAlergias.getText().trim().isEmpty() ? null : Arrays.asList(txtAlergias.getText().split(","));
             String tipoSANGRE = "+O";
 
             // Convertir los archivos seleccionados a lista de rutas
@@ -131,8 +131,6 @@ public class DoctorRegistrarHistorialMedicoViewController {
             mostrarAlerta("Error, Error al registrar el historial médico: " + e.getMessage());
         }
     }
-
-
     private void mostrarAlerta(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Error");
