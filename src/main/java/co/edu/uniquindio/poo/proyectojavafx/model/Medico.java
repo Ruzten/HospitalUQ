@@ -109,8 +109,6 @@ public class Medico extends Persona {
         }
     }
 
-
-
     public String getNLicencia() {
         return NLicencia;
     }

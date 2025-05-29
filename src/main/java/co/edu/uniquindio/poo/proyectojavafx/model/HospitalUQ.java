@@ -17,7 +17,7 @@ public class HospitalUQ {
     private ArrayList<Cita> citasGlobales;
     private static HospitalUQ instancia;
     private Persona paciente = Sesion.getUsuarioActual();
-    private static List<HistorialMedico> historialesPacientes = new ArrayList<>();
+    private List<HistorialMedico> HistorialesMedicosGlobal;
 
 
 
@@ -28,6 +28,7 @@ public class HospitalUQ {
         this.listaAdministradores = new LinkedList<>();
         this.listaDeHistorialesMedicos = new LinkedList<>();
         this.citasGlobales = new ArrayList<>();
+        this.HistorialesMedicosGlobal = new ArrayList<>();
     }
 
     public static HospitalUQ getInstancia() {
@@ -47,7 +48,7 @@ public class HospitalUQ {
                 "Martínez",                                 // apellidos
                 0,                                          // edad (se calculará después con calcularYAsignarEdad)
                 "3201234567",                               // telefono
-                "laura.martinez@mail.com",                  // correo
+                "acuario522008@gmail.com",                  // correo
                 "Carrera 10 #5-20",                         // direccion
                 "1234",                             // contrasena
                 LocalDate.parse("1990-03-05"),   // fechaNacimiento (LocalDate)
@@ -70,7 +71,7 @@ public class HospitalUQ {
                 "Sanchez",                 // apellidos
                 45,                        // edad
                 "3245870864",              // teléfono
-                "acuario522008@gmail.com",     // correo
+                "steven.sanchez.050208@gmail.com",     // correo
                 "Calle 123 #45-67",        // dirección
                 "1234",             // contraseña
                 "LIC-98765",               // NLicencia
@@ -155,6 +156,7 @@ public class HospitalUQ {
                 archivosAdjuntos1,
                 "Paciente reporta dolores de cabeza frecuentes"
         );
+        HistorialesMedicosGlobal.add(historial1);
 
         HistorialMedico historial2 = new HistorialMedico(
                 "HIST002",
@@ -169,6 +171,7 @@ public class HospitalUQ {
                 archivosAdjuntos2,
                 "Seguimiento en 2 semanas"
         );
+        HistorialesMedicosGlobal.add(historial2);
 
         // Agregamos los historiales usando el método agregarHistorialPaciente
         agregarHistorialMedico("pacientePrueba", historial1);
@@ -228,6 +231,20 @@ public class HospitalUQ {
                 citas.add(cita);
         }
         return citas;
+    }
+    // Metodo de agregar citaGlobal
+    public void agregarHistorialGlobal (HistorialMedico historialMedico) {
+        HistorialesMedicosGlobal.add(historialMedico);
+        System.out.println("Historial medico agg al global");
+    }
+    // Metodo de buscar Historial medico por paciente
+    public ArrayList<Cita> HistorialMedicoPorPaciente (Paciente paciente) {
+        ArrayList historialPorPaciente = new ArrayList<>();
+        for (HistorialMedico historialMedico : HistorialesMedicosGlobal) {
+            if (historialMedico.getPaciente() == paciente)
+                historialPorPaciente.add(historialMedico);
+        }
+        return historialPorPaciente;
     }
 
     // METODO DE BUSCAR USUARIO PARA LOGIN

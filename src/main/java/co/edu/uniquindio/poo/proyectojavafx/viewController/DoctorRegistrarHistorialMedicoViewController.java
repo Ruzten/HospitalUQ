@@ -47,6 +47,8 @@ public class DoctorRegistrarHistorialMedicoViewController {
 
     private final ObservableList<File> archivosSeleccionados = FXCollections.observableArrayList();
 
+    private HospitalUQ hospitalUQ = HospitalUQ.getInstancia();
+
     @FXML
     public void initialize() {
         txtIdPaciente.setText(paciente.getId());
@@ -114,6 +116,8 @@ public class DoctorRegistrarHistorialMedicoViewController {
                     txtNotasAdicionales.getText()
             );
 
+            hospitalUQ.agregarHistorialGlobal(nuevoHistorial);
+
             // Agregar el historial médico usando el método del modelo
             boolean registroExitoso = MedicoController.agregarHistorialMedico(
                     SesionTemporal.getPersonaSeleccionada().getId(),
@@ -131,8 +135,6 @@ public class DoctorRegistrarHistorialMedicoViewController {
             mostrarAlerta("Error, Error al registrar el historial médico: " + e.getMessage());
         }
     }
-
-
     private void mostrarAlerta(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Error");

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="787.0" maxWidth="1400.0" minHeight="787.0" minWidth="1400.0" prefHeight="787.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectojavafx.viewController.DoctorVerHistorialMedicoPacienteViewController">
+   <children>
+      <ImageView fitHeight="795.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Images/RegistrarHistorialMedico.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="mensajeBienvenida" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="62.0" prefHeight="47.0" prefWidth="543.0" text="Ver historial medico de paciente" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Open Sans ExtraBold" size="32.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="93.0" fitWidth="80.0" layoutX="73.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Images/LogoHospitalUQ.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1159.0" layoutY="58.0" mnemonicParsing="false" onAction="#volverAtras" prefHeight="47.0" prefWidth="171.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" text="Atras" textFill="WHITE">
+         <font>
+            <Font name="Lato Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TableView fx:id="tableHistorialMedico" layoutX="170.0" layoutY="179.0" prefHeight="451.0" prefWidth="1062.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="79.0" text="ID" />
+            <TableColumn fx:id="colFecha" prefWidth="83.0" text="Fecha" />
+            <TableColumn fx:id="colDoctor" prefWidth="156.0" text="Doctor" />
+            <TableColumn fx:id="colDiagnostico" prefWidth="227.0" text="Diagnostico" />
+            <TableColumn fx:id="colTratamiento" prefWidth="197.0" text="Tratamiento" />
+            <TableColumn fx:id="colArchivoAdjunto" prefWidth="152.0" text="Archivo Adjunto" />
+            <TableColumn fx:id="colNotas" prefWidth="167.0" text="Notas adicionales" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
