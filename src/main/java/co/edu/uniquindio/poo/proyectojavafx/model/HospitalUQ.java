@@ -467,6 +467,7 @@ public class HospitalUQ {
         Paciente paciente = buscarPaciente(id);
         if (paciente == null) {
             return false;
+
         }
         listaPacientes.remove(paciente);
         return true;

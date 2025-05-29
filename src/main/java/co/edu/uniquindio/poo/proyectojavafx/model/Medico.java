@@ -65,21 +65,6 @@ public class Medico extends Persona {
         historialesPacientes.add(historial);
     }
 
-    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento, Medico medico) {
-        if (historialesPacientes.contains(historial)) {
-            String id = UUID.randomUUID().toString(); // Genera un ID único para la entrada
-            EntradaHistorial nuevaEntrada = new EntradaHistorial(
-                    id,
-                    diagnostico,
-                    tratamiento,
-                    medico,
-                    LocalDateTime.now()
-            );
-            historial.agregarEntrada(nuevaEntrada);
-        }
-    }
-
-
     public String getNLicencia() {
         return NLicencia;
     }

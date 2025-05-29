@@ -19,9 +19,5 @@ public class AdminGestionMedicosViewController {
     private TableColumn colEdad;
     @FXML
     private TableColumn colTelefono;
-    @FXML
-    private TableColumn colId;
-    @FXML
-    private TableColumn colId;
 
 }

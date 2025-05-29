@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,20 +8,30 @@ import java.util.List;
 public class HistorialMedico {
     private String id;
     private Paciente paciente;
-    private List<EntradaHistorial> entradas;
     private String grupoSanguineo;
     private List<String> alergias;
     private List<String> antecedentes;
     private LocalDate fechaCreacion;
+    private LocalDateTime fecha;
+    private String diagnostico;
+    private String tratamiento;
+    private Medico medico;
+    private List<String> archivosAdjuntos;
+    private String notasAdicionales;
 
-    public HistorialMedico(String id, Paciente paciente, String grupoSanguineo) {
+    public HistorialMedico(String id, Paciente paciente, String grupoSanguineo, List<String> alergias, List<String> antecedentes, LocalDate fechaCreacion, LocalDateTime fecha, String diagnostico, String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
         this.id = id;
         this.paciente = paciente;
         this.grupoSanguineo = grupoSanguineo;
-        this.entradas = new ArrayList<>();
-        this.alergias = new ArrayList<>();
-        this.antecedentes = new ArrayList<>();
-        this.fechaCreacion = LocalDate.now();
+        this.alergias = alergias;
+        this.antecedentes = antecedentes;
+        this.fechaCreacion = fechaCreacion;
+        this.fecha = fecha;
+        this.diagnostico = diagnostico;
+        this.tratamiento = tratamiento;
+        this.medico = medico;
+        this.archivosAdjuntos = archivosAdjuntos;
+        this.notasAdicionales = notasAdicionales;
     }
 
     // Getters y Setters básicos
@@ -30,10 +41,6 @@ public class HistorialMedico {
 
     public Paciente getPaciente() {
         return paciente;
-    }
-
-    public List<EntradaHistorial> getEntradas() {
-        return entradas;
     }
 
     public String getGrupoSanguineo() {
@@ -52,13 +59,82 @@ public class HistorialMedico {
         return fechaCreacion;
     }
 
-    // Métodos para gestionar entradas
-    public void agregarEntrada(EntradaHistorial entrada) {
-        entradas.add(entrada);
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void eliminarEntrada(EntradaHistorial entrada) {
-        entradas.remove(entrada);
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+    public void setGrupoSanguineo(String grupoSanguineo) {
+        this.grupoSanguineo = grupoSanguineo;
     }
 
+    public void setAlergias(List<String> alergias) {
+        this.alergias = alergias;
+    }
+
+    public void setAntecedentes(List<String> antecedentes) {
+        this.antecedentes = antecedentes;
+    }
+
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public String getTratamiento() {
+        return tratamiento;
+    }
+
+    public void setTratamiento(String tratamiento) {
+        this.tratamiento = tratamiento;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public List<String> getArchivosAdjuntos() {
+        return archivosAdjuntos;
+    }
+
+    public void setArchivosAdjuntos(List<String> archivosAdjuntos) {
+        this.archivosAdjuntos = archivosAdjuntos;
+    }
+
+    public String getNotasAdicionales() {
+        return notasAdicionales;
+    }
+
+    public void setNotasAdicionales(String notasAdicionales) {
+        this.notasAdicionales = notasAdicionales;
+    }
+
+    public void agregarArchivoAdjunto(String rutaArchivo) {
+        archivosAdjuntos.add(rutaArchivo);
+    }
+
+    public void eliminarArchivoAdjunto(String rutaArchivo) {
+        archivosAdjuntos.remove(rutaArchivo);
+    }
 }
