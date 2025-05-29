@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,24 +61,50 @@ public class Medico extends Persona {
                 .anyMatch(h -> !h.estaOcupado() && h.coincideCon(horario));
     }
 
-    // Métodos para gestión de historiales médicos
-    public void agregarHistorialPaciente(HistorialMedico historial) {
+
+
+    public boolean agregarHistorialPaciente(String id, Paciente paciente, String grupoSanguineo,
+                                         List<String> alergias, List<String> antecedentes, String diagnostico,
+                                         String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
+
+        HistorialMedico historial = new HistorialMedico(
+                id,
+                paciente,
+                grupoSanguineo,
+                alergias,
+                antecedentes,
+                LocalDate.now(), // fechaCreacion
+                LocalDateTime.now(), // fecha
+                diagnostico,
+                tratamiento,
+                medico,
+                archivosAdjuntos != null ? archivosAdjuntos : new ArrayList<>(),
+                notasAdicionales
+        );
+
         historialesPacientes.add(historial);
+        return  true;
     }
 
-    public void registrarDiagnostico(HistorialMedico historial, String diagnostico, String tratamiento, Medico medico) {
+    public void registrarDiagnostico(HistorialMedico historial, String diagnostico,
+                                     String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
+
         if (historialesPacientes.contains(historial)) {
-            String id = UUID.randomUUID().toString(); // Genera un ID único para la entrada
-            EntradaHistorial nuevaEntrada = new EntradaHistorial(
-                    id,
-                    diagnostico,
-                    tratamiento,
-                    medico,
-                    LocalDateTime.now()
-            );
-            historial.agregarEntrada(nuevaEntrada);
+            historial.setDiagnostico(diagnostico);
+            historial.setTratamiento(tratamiento);
+            historial.setMedico(medico);
+            historial.setFecha(LocalDateTime.now());
+
+            if (archivosAdjuntos != null && !archivosAdjuntos.isEmpty()) {
+                historial.setArchivosAdjuntos(archivosAdjuntos);
+            }
+
+            if (notasAdicionales != null && !notasAdicionales.trim().isEmpty()) {
+                historial.setNotasAdicionales(notasAdicionales);
+            }
         }
     }
+
 
 
     public String getNLicencia() {
