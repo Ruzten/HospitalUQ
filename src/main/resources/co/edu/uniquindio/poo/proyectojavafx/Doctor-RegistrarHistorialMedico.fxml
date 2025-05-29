@@ -73,13 +73,13 @@
             <Font name="Lato Bold" size="15.0" />
          </font>
       </Text>
-      <TextArea fx:id="txtDiagnostico" layoutX="196.0" layoutY="304.0" prefHeight="138.0" prefWidth="463.0" promptText="Ingrese el diagnostico" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
-      <Text fill="WHITE" layoutX="197.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tratamiento / Recomendaciones:" wrappingWidth="253.0">
+      <TextArea fx:id="txtDiagnostico" layoutX="196.0" layoutY="304.0" prefHeight="80.0" prefWidth="463.0" promptText="Ingrese el diagnostico" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <Text fill="WHITE" layoutX="196.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tratamiento / Recomendaciones:" wrappingWidth="253.0">
          <font>
             <Font name="Lato Bold" size="15.0" />
          </font>
       </Text>
-      <TextArea fx:id="txtTratamiento" layoutX="197.0" layoutY="480.0" prefHeight="138.0" prefWidth="463.0" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
+      <TextArea fx:id="txtTratamiento" layoutX="196.0" layoutY="421.0" prefHeight="80.0" prefWidth="463.0" promptText="Ingrese el tratamiento o recomendaciones a dar al paciente:" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
       <Text fill="WHITE" layoutX="735.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notas adicionales:" wrappingWidth="411.0">
          <font>
             <Font name="Lato Bold" size="15.0" />
@@ -120,5 +120,11 @@
             <Font name="Lato Bold" size="15.0" />
          </font>
       </Text>
+      <Text fill="WHITE" layoutX="196.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alergias:" wrappingWidth="253.0">
+         <font>
+            <Font name="Lato Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txtAlergias" layoutX="196.0" layoutY="541.0" prefHeight="80.0" prefWidth="463.0" promptText="Ingrese las alergias que notifique el paciente:" style="-fx-background-color: #00619d; -fx-background-radius: 100px;" />
    </children>
 </AnchorPane>

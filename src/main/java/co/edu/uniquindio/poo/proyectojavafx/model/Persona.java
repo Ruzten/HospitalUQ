@@ -1,8 +1,5 @@
 package co.edu.uniquindio.poo.proyectojavafx.model;
 
-import java.util.Objects;
-import java.util.UUID;
-
 public abstract class Persona {
     protected String id;
     private Genero genero;
@@ -95,6 +92,10 @@ public abstract class Persona {
 
     public void setContrasena(String contrasena){
         this.contrasena = contrasena;
+    }
+
+    public String getNombreCompleto() {
+        return this.nombres + " " + this.apellidos;
     }
 
 }

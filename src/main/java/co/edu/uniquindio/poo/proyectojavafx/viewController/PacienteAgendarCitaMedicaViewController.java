@@ -179,6 +179,18 @@ public class PacienteAgendarCitaMedicaViewController {
                 horarioParaCita,
                 motivoCita);
 
+        enviarCorreoConfirmacionMedico();
+        enviarCorreoConfirmacionPaciente();
+        medicoSeleccionado.agregarCita(nuevaCita);
+        hospitalUQ.agregarCitaGlobal(nuevaCita);
+        mensajeMalo.setVisible(false);
+        mensajeBueno.setVisible(true);
+
+    }
+
+    public void enviarCorreoConfirmacionPaciente () {
+        String motivoCita = txtMotivo.getText();
+        LocalDate fechaHoraCita = dateFecha.getValue();
         EmailService emailService = new EmailService();
 
         String correo = pacienteActual.getCorreo(); // ← correo del paciente asociado
@@ -186,16 +198,26 @@ public class PacienteAgendarCitaMedicaViewController {
         String cuerpo = "Hola " + pacienteActual.getNombreCompleto() + ",\n\n" +
                 "Tu cita fue agendada exitosamente con el Dr(a). " +
                 medicoSeleccionado.getNombreCompleto() + " para el día " +
-                fechaHoraCita.toLocalDate() + " a las " + comboHora.getSelectionModel().getSelectedItem() + ".\n\n" +
+                fechaHoraCita + " a las " + comboHora.getSelectionModel().getSelectedItem() + ".\n\n" +
                 "Motivo: " + motivoCita + "\n\n" +
                 "Gracias por confiar en HospitalUQ.";
 
         emailService.enviarCorreo(correo, asunto, cuerpo);
+    }
 
-        medicoSeleccionado.agregarCita(nuevaCita);
-        hospitalUQ.agregarCitaGlobal(nuevaCita);
-        mensajeMalo.setVisible(false);
-        mensajeBueno.setVisible(true);
+    public  void enviarCorreoConfirmacionMedico () {
+        String motivoCita = txtMotivo.getText();
+        LocalDate fechaHoraCita = dateFecha.getValue();
+        EmailService emailService = new EmailService();
 
+        String correo = medicoSeleccionado.getCorreo(); // ← correo del paciente asociado
+        String asunto = "Confirmación de cita médica al paciente " + pacienteActual.getNombreCompleto();
+        String cuerpo = "Saludos " + medicoSeleccionado.toString() + ",\n\n" +
+                "La cita del paciente " + pacienteActual.getNombreCompleto() + " fue agendada exitosamente con usted para el día " +
+                fechaHoraCita + " a las " + comboHora.getSelectionModel().getSelectedItem() + ".\n\n" +
+                "Motivo: " + motivoCita + "\n\n" +
+                "Gracias por servir al HospitalUQ.";
+
+        emailService.enviarCorreo(correo, asunto, cuerpo);
     }
 }

@@ -12,7 +12,7 @@ public class HospitalUQAPP extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Navegacion.setStagePrincipal(primaryStage);
-        Parent root = FXMLLoader.load(getClass().getResource("InicioAPP.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/co/edu/uniquindio/poo/proyectojavafx/InicioApp.fxml"));
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Images/HospitalUQLOGO.png")));
 
         Scene scene = new Scene(root);

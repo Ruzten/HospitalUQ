@@ -66,19 +66,19 @@ public class HospitalUQ {
         Medico medicoPrueba = new Medico(
                 "medicoprueba",                     // id
                 Genero.MASCULINO,                    // genero
-                "Carlos",                  // nombres
-                "Ramírez",                 // apellidos
+                "Ruben",                  // nombres
+                "Sanchez",                 // apellidos
                 45,                        // edad
-                "3001234567",              // teléfono
-                "carlos@hospital.com",     // correo
+                "3245870864",              // teléfono
+                "acuario522008@gmail.com",     // correo
                 "Calle 123 #45-67",        // dirección
                 "1234",             // contraseña
                 "LIC-98765",               // NLicencia
                 true,                      // certificado
                 horariosMedico,                  // horarios
-                "Bogotá",                  // ubicación
+                "Armenia",                  // ubicación
                 Estado.ACTIVO,                    // estado
-                Especialidad.CARDIOLOGO,              // especialidad
+                Especialidad.MEDICO_GENERAL,              // especialidad
                 citasMedico,           // citas asignadas
                 historialesMedico      // historiales pacientes
         );

@@ -42,6 +42,8 @@ public class DoctorRegistrarHistorialMedicoViewController {
     private TextArea txtTratamiento;
     @FXML
     private TextArea txtNotasAdicionales;
+    @FXML
+    private TextArea txtAlergias;
 
     private final ObservableList<File> archivosSeleccionados = FXCollections.observableArrayList();
 
