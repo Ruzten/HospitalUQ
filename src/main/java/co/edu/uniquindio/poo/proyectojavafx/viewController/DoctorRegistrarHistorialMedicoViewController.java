@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
@@ -30,6 +31,12 @@ public class DoctorRegistrarHistorialMedicoViewController {
     private Text txtFechaActual;
     @FXML
     private ListView<String> listaArchivos;
+    @FXML
+    private TextArea txtDiagnostico;
+    @FXML
+    private TextArea txtTratamiento;
+    @FXML
+    private TextArea txtNotasAdicionales;
 
     private final ObservableList<File> archivosSeleccionados = FXCollections.observableArrayList();
 
