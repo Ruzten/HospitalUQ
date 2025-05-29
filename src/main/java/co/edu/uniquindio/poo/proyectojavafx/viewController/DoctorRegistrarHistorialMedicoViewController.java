@@ -1,9 +1,6 @@
 package co.edu.uniquindio.poo.proyectojavafx.viewController;
 
-import co.edu.uniquindio.poo.proyectojavafx.model.Navegacion;
-import co.edu.uniquindio.poo.proyectojavafx.model.Persona;
-import co.edu.uniquindio.poo.proyectojavafx.model.Sesion;
-import co.edu.uniquindio.poo.proyectojavafx.model.SesionTemporal;
+import co.edu.uniquindio.poo.proyectojavafx.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
