@@ -170,9 +170,10 @@ public class HospitalUQ {
                 "Seguimiento en 2 semanas"
         );
 
-        // Agregamos los historiales a la lista
-        historialesPacientes.add(historial1);
-        historialesPacientes.add(historial2);
+        // Agregamos los historiales usando el método agregarHistorialPaciente
+        agregarHistorialMedico("pacientePrueba", historial1);
+        agregarHistorialMedico("pacientePrueba", historial2);
+
 
     }
 
