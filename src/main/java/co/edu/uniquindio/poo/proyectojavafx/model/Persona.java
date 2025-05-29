@@ -97,8 +97,4 @@ public abstract class Persona {
         this.contrasena = contrasena;
     }
 
-    public String getNombreCompleto() {
-        return nombres + " " + apellidos;
-    }
-
 }

@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.proyectojavafx.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,7 +15,16 @@ public class Medico extends Persona {
     private Estado estado;
     private Especialidad especialidad;
     private List<Cita> citasAsignadas;
-    private List<HistorialMedico> historialesPacientes;
+    private static List<HistorialMedico> historialesPacientes;
+    private static Medico medico;
+    private static HospitalUQ hospitalUQ;
+
+
+    public static void inicializar(Medico medicoActual, HospitalUQ hospital) {
+        medico = medicoActual;
+        hospitalUQ = hospital;
+    }
+
 
     public Medico(String id, Genero genero, String nombres, String apellidos, int edad, String telefono, String correo, String direccion, String contrasena, String NLicencia, boolean certificado, List<Horario> horarios, String ubicacion, Estado estado, Especialidad especialidad, List<Cita> citasAsignadas, List<HistorialMedico> historialesPacientes) {
         super(id, genero, nombres, apellidos, edad, telefono, correo, direccion, contrasena);
@@ -61,30 +71,14 @@ public class Medico extends Persona {
                 .anyMatch(h -> !h.estaOcupado() && h.coincideCon(horario));
     }
 
-
-
-    public boolean agregarHistorialPaciente(String id, Paciente paciente, String grupoSanguineo,
-                                         List<String> alergias, List<String> antecedentes, String diagnostico,
-                                         String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
-
-        HistorialMedico historial = new HistorialMedico(
-                id,
-                paciente,
-                grupoSanguineo,
-                alergias,
-                antecedentes,
-                LocalDate.now(), // fechaCreacion
-                LocalDateTime.now(), // fecha
-                diagnostico,
-                tratamiento,
-                medico,
-                archivosAdjuntos != null ? archivosAdjuntos : new ArrayList<>(),
-                notasAdicionales
-        );
-
-        historialesPacientes.add(historial);
-        return  true;
+    public static boolean agregarHistorialPaciente(String id, HistorialMedico historialMedico) {
+        if (historialMedico != null && historialMedico.getId().equals(id)) {
+            historialesPacientes.add(historialMedico);
+            return true;
+        }
+        return false;
     }
+
 
     public void registrarDiagnostico(HistorialMedico historial, String diagnostico,
                                      String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
@@ -177,6 +171,7 @@ public class Medico extends Persona {
         }
         return prefijo + getNombres() + " " + getApellidos();
     }
+
 
 
 }

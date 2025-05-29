@@ -18,7 +18,7 @@ public class MedicoController {
    }
 
    public static boolean agregarHistorialMedico(String idPaciente, HistorialMedico historialMedico){
-        return hospitalUQ.agregarHistorialMedico(idPaciente, historialMedico);
+        return Medico.agregarHistorialPaciente(idPaciente, historialMedico);
    }
 
    public static boolean actualizarHistorialMedico(String idPaciente, HistorialMedico historialMedico){

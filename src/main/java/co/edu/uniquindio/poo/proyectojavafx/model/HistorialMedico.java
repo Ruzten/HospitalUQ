@@ -10,7 +10,6 @@ public class HistorialMedico {
     private Paciente paciente;
     private String grupoSanguineo;
     private List<String> alergias;
-    private List<String> antecedentes;
     private LocalDate fechaCreacion;
     private LocalDateTime fecha;
     private String diagnostico;
@@ -19,12 +18,11 @@ public class HistorialMedico {
     private List<String> archivosAdjuntos;
     private String notasAdicionales;
 
-    public HistorialMedico(String id, Paciente paciente, String grupoSanguineo, List<String> alergias, List<String> antecedentes, LocalDate fechaCreacion, LocalDateTime fecha, String diagnostico, String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
+    public HistorialMedico(String id, Paciente paciente, String grupoSanguineo, List<String> alergias,  LocalDate fechaCreacion, LocalDateTime fecha, String diagnostico, String tratamiento, Medico medico, List<String> archivosAdjuntos, String notasAdicionales) {
         this.id = id;
         this.paciente = paciente;
         this.grupoSanguineo = grupoSanguineo;
         this.alergias = alergias;
-        this.antecedentes = antecedentes;
         this.fechaCreacion = fechaCreacion;
         this.fecha = fecha;
         this.diagnostico = diagnostico;
@@ -51,10 +49,6 @@ public class HistorialMedico {
         return alergias;
     }
 
-    public List<String> getAntecedentes() {
-        return antecedentes;
-    }
-
     public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
@@ -72,10 +66,6 @@ public class HistorialMedico {
 
     public void setAlergias(List<String> alergias) {
         this.alergias = alergias;
-    }
-
-    public void setAntecedentes(List<String> antecedentes) {
-        this.antecedentes = antecedentes;
     }
 
     public void setFechaCreacion(LocalDate fechaCreacion) {
