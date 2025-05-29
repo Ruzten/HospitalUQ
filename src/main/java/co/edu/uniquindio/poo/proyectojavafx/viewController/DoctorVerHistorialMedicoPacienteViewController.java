@@ -10,8 +10,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
-public class PacienteHistorialMedicoViewController {
-    private Paciente paciente = (Paciente) Sesion.getUsuarioActual();
+public class DoctorVerHistorialMedicoPacienteViewController {
+    private Paciente paciente = (Paciente) SesionTemporal.getPersonaSeleccionada();
     private HospitalUQ hospitalUQ = HospitalUQ.getInstancia();
     @FXML
     private TableView tableHistorialMedico;

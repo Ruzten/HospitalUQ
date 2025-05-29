@@ -77,8 +77,13 @@ public class Medico extends Persona {
 
             Paciente paciente = historialMedico.getPaciente();
             if (paciente != null) {
+                if (paciente.getHistorialMedico() == null) {
+                    paciente.setHistorialMedico(new ArrayList<>());
+                }
+
                 paciente.getHistorialMedico().add(historialMedico);
             }
+
             return true;
         }
         return false;

@@ -37,6 +37,11 @@ public class InterfazMedicoViewController {
     }
 
     @FXML
+    public void irHistorialMedicoPacienteID (ActionEvent event) throws  IOException {
+        Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/Doctor-VerHistorialMedicoPacienteID.fxml");
+    }
+
+    @FXML
     public void irRegistrarHorarioDisponible (ActionEvent event) throws  IOException {
         Navegacion.cambiarVista("/co/edu/uniquindio/poo/proyectojavafx/Doctor-RegistrarHorarioDisponible.fxml");
     }
