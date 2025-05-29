@@ -174,7 +174,44 @@ public class HospitalUQ {
         agregarHistorialMedico("pacientePrueba", historial1);
         agregarHistorialMedico("pacientePrueba", historial2);
 
+        List<Horario> horariosMedicoPrueba1 = new ArrayList<>();
+        List<Horario> horariosMedicoPrueba2 = new ArrayList<>();
 
+        horariosMedicoPrueba1.add(new Horario(
+                DayOfWeek.MONDAY,
+                LocalTime.of(8, 0),
+                LocalTime.of(16, 0)
+        ));
+        horariosMedicoPrueba1.add(new Horario(
+                DayOfWeek.WEDNESDAY,
+                LocalTime.of(8, 0),
+                LocalTime.of(16, 0)
+        ));
+        horariosMedicoPrueba1.add(new Horario(
+                DayOfWeek.FRIDAY,
+                LocalTime.of(8, 0),
+                LocalTime.of(16, 0)
+        ));
+
+        horariosMedicoPrueba2.add(new Horario(
+                DayOfWeek.TUESDAY,
+                LocalTime.of(9, 0),
+                LocalTime.of(17, 0)
+        ));
+        horariosMedicoPrueba2.add(new Horario(
+                DayOfWeek.THURSDAY,
+                LocalTime.of(9, 0),
+                LocalTime.of(17, 0)
+        ));
+        horariosMedicoPrueba2.add(new Horario(
+                DayOfWeek.SATURDAY,
+                LocalTime.of(8, 0),
+                LocalTime.of(13, 0)
+        ));
+
+
+        medicoPrueba1.setHorarios(horariosMedicoPrueba1);
+        medicoPrueba2.setHorarios(horariosMedicoPrueba2);
     }
 
     // Metodo de agregar citaGlobal
