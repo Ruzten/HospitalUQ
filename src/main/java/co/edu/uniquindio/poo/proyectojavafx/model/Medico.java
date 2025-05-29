@@ -74,6 +74,11 @@ public class Medico extends Persona {
     public static boolean agregarHistorialPaciente(String id, HistorialMedico historialMedico) {
         if (historialMedico != null && historialMedico.getId().equals(id)) {
             historialesPacientes.add(historialMedico);
+
+            Paciente paciente = historialMedico.getPaciente();
+            if (paciente != null) {
+                paciente.getHistorialMedico().add(historialMedico);
+            }
             return true;
         }
         return false;
@@ -98,8 +103,6 @@ public class Medico extends Persona {
             }
         }
     }
-
-
 
     public String getNLicencia() {
         return NLicencia;

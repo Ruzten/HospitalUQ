@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.proyectojavafx.model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Arrays;
 import java.util.List;
 
 public class Paciente extends Persona {
