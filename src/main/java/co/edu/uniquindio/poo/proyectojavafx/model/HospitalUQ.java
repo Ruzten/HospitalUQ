@@ -215,6 +215,8 @@ public class HospitalUQ {
 
         medicoPrueba1.setHorarios(horariosMedicoPrueba1);
         medicoPrueba2.setHorarios(horariosMedicoPrueba2);
+        medicoPrueba.setHorarios(horariosMedicoPrueba1);
+        medicoPrueba.setHorarios(horariosMedicoPrueba2);
     }
 
     // Metodo de agregar citaGlobal
